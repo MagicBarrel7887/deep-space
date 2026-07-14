@@ -1,0 +1,51 @@
+stages:
+  - fetch
+  - build
+  - deploy
+
+# Runs on a schedule (set up under CI/CD > Schedules) so DSN, spacecraft,
+# ISS, events, and imagery data stay current between commits.
+fetch-data:
+  stage: fetch
+  image: node:20-alpine
+  before_script:
+    - apk add --no-cache git
+    - npm install
+  script:
+    - npm run fetch:all
+  artifacts:
+    paths:
+      - src/_data
+    expire_in: 1 day
+  # tags:
+  #   - Proxmox-Swarm-S3-Runner-Node01
+
+build:
+  stage: build
+  image: node:20-alpine
+  needs: ["fetch-data"]
+  before_script:
+    - apk add --no-cache git
+    - npm install
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 day
+  # tags:
+  #   - Proxmox-Swarm-S3-Runner-Node01
+
+pages:
+  stage: deploy
+  image: alpine:latest
+  needs: ["build"]
+  script:
+    - echo "Publishing to GitLab Pages"
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  # tags:
+  #   - Proxmox-Swarm-S3-Runner-Node01
