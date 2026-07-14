@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Voyager 1",
+    "distanceAu": 166.2,
+    "lightTime": "23h 04m",
+    "speed": "17.0 km/s",
+    "launched": "Sep 5, 1977",
+    "status": "2 of 10 instruments still active, power-limited",
+    "news": [
+      { "date": "May 4, 2026", "headline": "NASA powers down LECP instrument to conserve energy" },
+      { "date": "Oct 24, 2025", "headline": "Communications restored after brief transmitter pause" }
+    ]
+  },
+  {
+    "name": "Voyager 2",
+    "distanceAu": 138.9,
+    "lightTime": "19h 17m",
+    "speed": "15.4 km/s",
+    "launched": "Aug 20, 1977",
+    "status": "Plasma science instrument powered down, power-limited",
+    "news": [
+      { "date": "Mar 24, 2026", "headline": "Low-energy charged particle instrument shut off" }
+    ]
+  },
+  {
+    "name": "New Horizons",
+    "distanceAu": 61.4,
+    "lightTime": "8h 31m",
+    "speed": "14.1 km/s",
+    "launched": "Jan 19, 2006",
+    "status": "Nominal, searching for next KBO flyby target",
+    "news": [
+      { "date": "Jun 2026", "headline": "Extended mission KBO candidate search continues" }
+    ]
+  },
+  {
+    "name": "Parker Solar Probe",
+    "distanceAu": 0.09,
+    "lightTime": "12m",
+    "speed": "191.8 km/s",
+    "launched": "Aug 12, 2018",
+    "status": "Nominal, near-perihelion pass",
+    "news": [
+      { "date": "Jul 2026", "headline": "Closest approach to date recorded this pass" }
+    ]
+  }
+]

@@ -1,0 +1,128 @@
+---
+layout: base.njk
+title: Deep Space // Signal
+---
+<header class="hdr">
+  <div>
+    <h1>DEEP SPACE // SIGNAL</h1>
+    <p class="sub">LIVE TELEMETRY</p>
+  </div>
+  <div class="clock-wrap">
+    <div class="clock" id="clock">--:--:--</div>
+    <div class="sub">GROUND STATION FEED</div>
+  </div>
+</header>
+
+<main class="grid">
+
+  <section class="panel">
+    <div class="panel-hd">
+      <span class="panel-title">DSN Now</span>
+      <span class="panel-sub">{{ dsn | selectattr("status", "equalto", "active") | list | length }}/{{ dsn | length }} LINKS UP</span>
+    </div>
+    <div class="panel-body">
+      {% for d in dsn %}
+      <div class="row">
+        <span class="dot dot-{{ d.status }}"></span>
+        <span class="row-id">{{ d.id }}</span>
+        <span class="row-target">{{ d.target }}</span>
+        <span class="row-band">{{ d.band }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel" x-data="{ open: null }">
+    <div class="panel-hd">
+      <span class="panel-title">Spacecraft Tracker</span>
+      <span class="panel-sub">TAP FOR DETAILS</span>
+    </div>
+    <div class="panel-body">
+      {% for s in spacecraft %}
+      <div class="sc-row">
+        <button class="sc-btn" type="button" @click="open = (open === '{{ s.name }}' ? null : '{{ s.name }}')">
+          <div class="sc-line">
+            <span :class="open === '{{ s.name }}' ? 'accent' : ''">{{ s.name }}</span>
+            <span class="accent">{{ s.distanceAu }} AU</span>
+          </div>
+          <div class="bar"><div class="bar-fill" style="width: {{ (s.distanceAu / 170 * 100) | round(1) }}%"></div></div>
+          <div class="sc-meta"><span>light time {{ s.lightTime }}</span><span>{{ s.speed }}</span></div>
+        </button>
+        <div class="sc-detail" x-show="open === '{{ s.name }}'" x-transition x-cloak>
+          <div class="muted">Launched {{ s.launched }} &middot; {{ s.status }}</div>
+          <div class="news-label">Latest from JPL/NASA feed</div>
+          {% for n in s.news %}
+          <div class="news-item"><span class="accent">{{ n.date }}</span> <span>{{ n.headline }}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-hd">
+      <span class="panel-title">Upcoming Events</span>
+      <span class="panel-sub">NEXT 30 DAYS</span>
+    </div>
+    <div class="panel-body">
+      {% for e in events %}
+      <div class="ev-row"><span class="accent ev-date">{{ e.date }}</span><span>{{ e.label }}</span></div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel span-2">
+    <div class="panel-hd">
+      <span class="panel-title">Imagery</span>
+      <span class="panel-sub">EARTH + PLANETARY MIX</span>
+    </div>
+    <div class="panel-body img-grid">
+      {% for img in imagery %}
+      <div class="img-card">
+        <div class="img-ph">{{ img.tag }}</div>
+        <div class="accent img-title">{{ img.title }}</div>
+        <div class="muted img-cap">{{ img.caption }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-hd">
+      <span class="panel-title">Signal Paths</span>
+      <span class="panel-sub">ALL DISHES</span>
+    </div>
+    <div class="panel-body">
+      {% for d in dsn %}
+      <div class="sig-row">
+        <div class="sig-line">
+          <span class="dot dot-{{ d.status }}"></span>
+          <span>{{ d.site }} {{ d.diameter }}</span>
+          <span class="muted sig-id">{{ d.id }}</span>
+        </div>
+        <div class="muted sig-note">{% if d.status == "active" %}&rarr; {{ d.target }}{% else %}{{ d.note }}{% endif %}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel span-3">
+    <div class="panel-hd">
+      <span class="panel-title">Ground Map</span>
+      <span class="panel-sub" id="map-label">GROUND STATIONS + ISS</span>
+    </div>
+    <div class="panel-body map-wrap">
+      <div id="map-svg" class="map-svg"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">DEEP SPACE // SIGNAL &mdash; data refreshed on a scheduled CI pipeline</footer>
+
+<script type="application/json" id="data-sites">{{ sites | dump | safe }}</script>
+<script type="application/json" id="data-iss">{{ iss | dump | safe }}</script>
+<script type="application/json" id="data-dsn">{{ dsn | dump | safe }}</script>
+<script type="application/json" id="data-mars">{{ marsAssets | dump | safe }}</script>
+<script type="application/json" id="data-moon">{{ moonAssets | dump | safe }}</script>

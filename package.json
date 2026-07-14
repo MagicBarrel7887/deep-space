@@ -1,0 +1,22 @@
+{
+  "name": "deep-space",
+  "version": "1.0.0",
+  "description": "Live deep space dashboard — DSN Now, spacecraft tracker, mission events, imagery, ground map. Eleventy + Alpine.js, built for GitLab Pages / Xibo signage.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "fetch:dsn": "node scripts/fetch-dsn.js",
+    "fetch:spacecraft": "node scripts/fetch-spacecraft.js",
+    "fetch:iss": "node scripts/fetch-iss.js",
+    "fetch:events": "node scripts/fetch-events.js",
+    "fetch:imagery": "node scripts/fetch-imagery.js",
+    "fetch:news": "node scripts/fetch-news.js",
+    "fetch:all": "npm run fetch:dsn && npm run fetch:spacecraft && npm run fetch:iss && npm run fetch:events && npm run fetch:imagery && npm run fetch:news"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
