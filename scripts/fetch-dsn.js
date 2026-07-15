@@ -59,6 +59,22 @@ function bandFromFrequencyHz(freq) {
   return null;
 }
 
+function formatDataRate(bps) {
+  const n = Number(bps);
+  if (!n || n <= 0) return null;
+  if (n >= 1e6) return `${(n / 1e6).toFixed(1)} Mbps`;
+  if (n >= 1e3) return `${(n / 1e3).toFixed(1)} kbps`;
+  return `${Math.round(n)} bps`;
+}
+
+function formatRtlt(seconds) {
+  const s = Number(seconds);
+  if (!s || s <= 0) return null;
+  const hours = Math.floor(s / 3600);
+  const mins = Math.round((s % 3600) / 60);
+  return hours > 0 ? `${hours}h ${String(mins).padStart(2, "0")}m` : `${mins}m`;
+}
+
 async function fetchSpacecraftNames() {
   try {
     const res = await fetch(CONFIG_URL);
@@ -121,6 +137,9 @@ async function main() {
       target: friendly,
       band: signal ? bandFromFrequencyHz(signal.frequency) || "—" : "—",
       status: "active",
+      signalType: signal ? signal.signalType : null, // "data", "carrier", or "ranging"
+      dataRate: signal ? formatDataRate(signal.dataRate) : null,
+      rtlt: formatRtlt(target.rtlt), // round-trip light time — how long a signal takes there and back
     });
   }
 

@@ -1,10 +1,10 @@
 [
-  { "id": "DSS-14", "site": "Goldstone", "diameter": "70m", "target": "Voyager 1", "band": "X", "status": "active" },
-  { "id": "DSS-25", "site": "Goldstone", "diameter": "34m", "target": "Mars Reconnaissance Orbiter", "band": "Ka", "status": "active" },
+  { "id": "DSS-14", "site": "Goldstone", "diameter": "70m", "target": "Voyager 1", "band": "X", "status": "active", "signalType": "data", "dataRate": "160 bps", "rtlt": "46h 08m" },
+  { "id": "DSS-25", "site": "Goldstone", "diameter": "34m", "target": "Mars Reconnaissance Orbiter", "band": "Ka", "status": "active", "signalType": "data", "dataRate": "6.0 Mbps", "rtlt": "18m" },
   { "id": "DSS-24", "site": "Goldstone", "diameter": "34m", "target": "—", "band": "—", "status": "idle", "note": "next pass 22:40 UTC · Psyche" },
-  { "id": "DSS-43", "site": "Canberra", "diameter": "70m", "target": "Voyager 2", "band": "X", "status": "active" },
+  { "id": "DSS-43", "site": "Canberra", "diameter": "70m", "target": "Voyager 2", "band": "X", "status": "active", "signalType": "data", "dataRate": "160 bps", "rtlt": "38h 34m" },
   { "id": "DSS-35", "site": "Canberra", "diameter": "34m", "target": "—", "band": "—", "status": "maintenance", "note": "scheduled maintenance, back 18:00 UTC" },
-  { "id": "DSS-63", "site": "Madrid", "diameter": "70m", "target": "New Horizons", "band": "X", "status": "active" },
-  { "id": "DSS-56", "site": "Madrid", "diameter": "34m", "target": "Perseverance (relay)", "band": "X", "status": "active" },
+  { "id": "DSS-63", "site": "Madrid", "diameter": "70m", "target": "New Horizons", "band": "X", "status": "active", "signalType": "data", "dataRate": "1.1 kbps", "rtlt": "17h 02m" },
+  { "id": "DSS-56", "site": "Madrid", "diameter": "34m", "target": "Perseverance (relay)", "band": "X", "status": "active", "signalType": "data", "dataRate": "2.0 Mbps", "rtlt": "24m" },
   { "id": "DSS-54", "site": "Madrid", "diameter": "34m", "target": "—", "band": "—", "status": "idle", "note": "available · no pass scheduled" }
 ]

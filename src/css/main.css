@@ -231,3 +231,249 @@ body {
   color: var(--faint);
   letter-spacing: 0.05em;
 }
+
+:root {
+  --bg: #080a16;
+  --panel: #0e1225;
+  --border: #232a49;
+  --accent: #8fb3e8;
+  --positive: #7dd3c0;
+  --maintenance: #94a3c9;
+  --idle: #4b5578;
+  --iss: #f2c14e;
+  --muted: #5c6690;
+  --faint: #3d4470;
+  --text: #c7d2f0;
+}
+ 
+* { box-sizing: border-box; }
+ 
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "JetBrains Mono", "Space Mono", ui-monospace, Menlo, Consolas, monospace;
+  position: relative;
+  overflow-x: hidden;
+}
+ 
+[x-cloak] { display: none !important; }
+ 
+/* Static nebula glow — plain gradients, no blur filter (cheap on Xibo GPUs) */
+.bg-nebula {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 800px 500px at 15% 10%, rgba(63, 58, 110, 0.35), transparent 60%),
+    radial-gradient(ellipse 700px 600px at 85% 85%, rgba(29, 74, 89, 0.3), transparent 60%);
+}
+ 
+/* Starfield container — oversized + centered, rotated slowly by main.js/CSS.
+   Single transform animation, GPU-compositor only, no per-frame repaint. */
+.bg-starfield {
+  position: fixed;
+  z-index: 0;
+  width: 160%;
+  height: 160%;
+  left: -30%;
+  top: -30%;
+  animation: starfield-spin 480s linear infinite;
+  pointer-events: none;
+}
+@keyframes starfield-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+ 
+.page {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+ 
+.hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.hdr h1 {
+  font-size: 15px;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0;
+}
+.sub {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  margin: 2px 0 0;
+}
+.clock-wrap { text-align: right; }
+.clock {
+  font-size: 18px;
+  color: var(--positive);
+  font-variant-numeric: tabular-nums;
+}
+ 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .span-2, .span-3 { grid-column: span 1; }
+}
+ 
+.panel {
+  background: rgba(14, 18, 37, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.panel-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.panel-title {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.panel-sub {
+  font-size: 10px;
+  color: var(--muted);
+}
+.panel-body {
+  padding: 16px;
+  overflow: auto;
+  flex-grow: 1;
+}
+ 
+.accent { color: var(--accent); }
+.muted { color: var(--muted); }
+ 
+/* DSN Now + Signal Paths rows */
+.row {
+  display: flex;
+  align-items: flex-start;
+  font-size: 11px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #1a2040;
+}
+.row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.row-id { width: 60px; flex-shrink: 0; }
+.row-main { flex: 1; padding: 0 8px; min-width: 0; display: flex; flex-direction: column; }
+.row-target { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row-detail { font-size: 9px; color: var(--muted); margin-top: 1px; }
+ 
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.dot-active { background: var(--positive); }
+.dot-maintenance { background: var(--maintenance); }
+.dot-idle { background: var(--idle); }
+ 
+/* Spacecraft tracker */
+.sc-row { margin-bottom: 14px; }
+.sc-row:last-child { margin-bottom: 0; }
+.sc-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+.sc-line { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px; }
+.bar { height: 4px; background: #1a2040; border-radius: 2px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--positive); }
+.sc-meta { display: flex; justify-content: space-between; font-size: 9px; color: var(--muted); margin-top: 4px; }
+.sc-detail {
+  margin-top: 8px;
+  padding-left: 8px;
+  border-left: 2px solid #2c3560;
+  font-size: 10px;
+}
+.sc-detail .news-label {
+  font-size: 9px;
+  color: var(--faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 6px 0 4px;
+}
+.news-item { display: flex; gap: 8px; margin-bottom: 2px; }
+ 
+/* Events */
+.ev-row { display: flex; gap: 12px; font-size: 11px; padding: 8px 0; border-bottom: 1px solid #1a2040; }
+.ev-row:last-child { border-bottom: none; }
+.ev-date { width: 48px; flex-shrink: 0; }
+ 
+/* Imagery */
+.img-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.img-el {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  display: block;
+  background: #141a34;
+}
+.img-ph {
+  aspect-ratio: 16 / 9;
+  background: #141a34;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: var(--faint);
+  margin-bottom: 8px;
+}
+.img-title { font-size: 10px; }
+.img-cap { font-size: 9px; margin-top: 2px; }
+ 
+/* Signal paths */
+.sig-row { font-size: 10px; margin-bottom: 10px; }
+.sig-row:last-child { margin-bottom: 0; }
+.sig-line { display: flex; align-items: center; gap: 8px; }
+.sig-id { margin-left: auto; color: var(--faint); }
+.sig-note { padding-left: 14px; margin-top: 2px; }
+.sig-rtlt { font-style: italic; }
+ 
+/* Ground map */
+.map-wrap { padding: 0; }
+.map-svg { height: 224px; transition: opacity 600ms ease; }
+.map-orbit-note { font-size: 9px; padding: 6px 8px 0; }
+ 
+.foot {
+  margin-top: 16px;
+  font-size: 9px;
+  color: var(--faint);
+  letter-spacing: 0.05em;
+}
+ 

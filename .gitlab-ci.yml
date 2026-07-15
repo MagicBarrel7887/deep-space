@@ -16,6 +16,7 @@ fetch-data:
   artifacts:
     paths:
       - src/_data
+      - src/img
     expire_in: 1 day
   # tags:
   #   - Proxmox-Swarm-S3-Runner-Node01
