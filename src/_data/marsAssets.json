@@ -1,6 +1,27 @@
+
 [
-  { "name": "Perseverance", "lat": 18.4, "lon": 77.5, "note": "Jezero Crater" },
-  { "name": "Curiosity", "lat": -4.6, "lon": 137.4, "note": "Gale Crater" },
-  { "name": "MRO", "lat": 0, "lon": 0, "note": "orbiter, relay active" },
-  { "name": "MAVEN", "lat": 0, "lon": 40, "note": "orbiter, atmosphere science" }
+  {
+    "name": "Perseverance",
+    "lat": 18.4,
+    "lon": 77.5,
+    "note": "Jezero Crater",
+    "type": "surface"
+  },
+  {
+    "name": "Curiosity",
+    "lat": -4.6,
+    "lon": 137.4,
+    "note": "Gale Crater",
+    "type": "surface"
+  },
+  {
+    "name": "MRO",
+    "note": "relay active",
+    "type": "orbit"
+  },
+  {
+    "name": "MAVEN",
+    "note": "atmosphere science",
+    "type": "orbit"
+  }
 ]

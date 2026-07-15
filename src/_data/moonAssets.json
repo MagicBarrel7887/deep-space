@@ -1,5 +1,21 @@
 [
-  { "name": "Artemis South Pole Site", "lat": -84.5, "lon": 31.0, "note": "candidate landing region" },
-  { "name": "Gateway (planned)", "lat": 0, "lon": 0, "note": "NRHO orbit, pre-launch" },
-  { "name": "VIPER (planned)", "lat": -85.2, "lon": 20.0, "note": "Nobile region" }
+  {
+    "name": "Artemis South Pole Site",
+    "lat": -84.5,
+    "lon": 31,
+    "note": "candidate landing region",
+    "type": "surface"
+  },
+  {
+    "name": "Gateway (planned)",
+    "note": "NRHO orbit, pre-launch",
+    "type": "orbit"
+  },
+  {
+    "name": "VIPER (planned)",
+    "lat": -85.2,
+    "lon": 20,
+    "note": "Nobile region",
+    "type": "surface"
+  }
 ]

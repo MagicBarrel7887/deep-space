@@ -21,8 +21,13 @@ async function fetchAsteroidCloseApproaches() {
   // JPL's Close Approach Data API — no key required.
   // Docs: https://ssd-api.jpl.nasa.gov/doc/cad.html
   try {
+    const pad = (n) => String(n).padStart(2, "0");
+    const fmt = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+    const today = new Date();
+    const in30Days = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+
     const res = await fetch(
-      "https://ssd-api.jpl.nasa.gov/cad.api?date-min=now&date-max=+30&dist-max=0.05&sort=date"
+      `https://ssd-api.jpl.nasa.gov/cad.api?date-min=${fmt(today)}&date-max=${fmt(in30Days)}&dist-max=0.05&sort=date`
     );
     if (!res.ok) return [];
     const data = await res.json();

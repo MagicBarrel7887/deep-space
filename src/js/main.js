@@ -61,10 +61,13 @@ function renderMap(body, data) {
   const markerColor = body === "mars" ? "#e0a06a" : body === "moon" ? "#c7d2f0" : "#7dd3c0";
 
   let points = [];
+  let orbiters = [];
   if (body === "mars") {
-    points = data.mars.map((a) => ({ ...a, sub: a.note }));
+    points = data.mars.filter((a) => a.type !== "orbit").map((a) => ({ ...a, sub: a.note }));
+    orbiters = data.mars.filter((a) => a.type === "orbit");
   } else if (body === "moon") {
-    points = data.moon.map((a) => ({ ...a, sub: a.note }));
+    points = data.moon.filter((a) => a.type !== "orbit").map((a) => ({ ...a, sub: a.note }));
+    orbiters = data.moon.filter((a) => a.type === "orbit");
   } else {
     points = data.sites.map((s) => {
       const dishesHere = data.dsn.filter((d) => d.site === s.name);
@@ -103,20 +106,24 @@ function renderMap(body, data) {
     `;
   }
 
-  return `
-    <svg viewBox="0 0 ${w} ${h}" style="width:100%; height:100%;">
-      <rect x="0" y="0" width="${w}" height="${h}" fill="${bg}" />
-      ${gridLines.join("")}
-      <line x1="0" y1="${h / 2}" x2="${w}" y2="${h / 2}" stroke="${grid}" stroke-width="1.4" />
-      ${markers}
-      ${issMarker}
-    </svg>
-  `;
+  return {
+    svg: `
+      <svg viewBox="0 0 ${w} ${h}" style="width:100%; height:100%;">
+        <rect x="0" y="0" width="${w}" height="${h}" fill="${bg}" />
+        ${gridLines.join("")}
+        <line x1="0" y1="${h / 2}" x2="${w}" y2="${h / 2}" stroke="${grid}" stroke-width="1.4" />
+        ${markers}
+        ${issMarker}
+      </svg>
+    `,
+    orbiters,
+  };
 }
 
 function initMapRotator() {
   const mapEl = document.getElementById("map-svg");
   const labelEl = document.getElementById("map-label");
+  const orbitEl = document.getElementById("map-orbit-note");
   if (!mapEl) return;
 
   const data = {
@@ -135,8 +142,14 @@ function initMapRotator() {
 
   let index = 0;
   function draw() {
-    mapEl.innerHTML = renderMap(views[index].id, data);
+    const { svg, orbiters } = renderMap(views[index].id, data);
+    mapEl.innerHTML = svg;
     if (labelEl) labelEl.textContent = views[index].label;
+    if (orbitEl) {
+      orbitEl.textContent = orbiters.length
+        ? `In orbit (no fixed ground position): ${orbiters.map((o) => `${o.name} (${o.note})`).join(" · ")}`
+        : "";
+    }
   }
   draw();
 

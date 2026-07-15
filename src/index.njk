@@ -80,7 +80,11 @@ title: Deep Space // Signal
     <div class="panel-body img-grid">
       {% for img in imagery %}
       <div class="img-card">
+        {% if img.url %}
+        <img class="img-el" src="{{ img.url }}" alt="{{ img.title }}" loading="lazy">
+        {% else %}
         <div class="img-ph">{{ img.tag }}</div>
+        {% endif %}
         <div class="accent img-title">{{ img.title }}</div>
         <div class="muted img-cap">{{ img.caption }}</div>
       </div>
@@ -114,6 +118,7 @@ title: Deep Space // Signal
     </div>
     <div class="panel-body map-wrap">
       <div id="map-svg" class="map-svg"></div>
+      <div id="map-orbit-note" class="muted map-orbit-note"></div>
     </div>
   </section>
 
