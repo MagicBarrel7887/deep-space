@@ -38,11 +38,18 @@ function parseRssItems(xml) {
 }
 
 async function main() {
-  const res = await fetch(FEED_URL, { headers: { "User-Agent": "deep-space-dashboard/1.0" } });
-  if (!res.ok) throw new Error(`JPL feed returned ${res.status}`);
-  const xml = await res.text();
-  const items = parseRssItems(xml);
-  if (items.length === 0) throw new Error("Parsed zero items from JPL feed");
+  const res = await fetch(FEED_URL, {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (compatible; deep-space-dashboard/1.0; +https://gitlab.ponder.net)",
+      Accept: "application/rss+xml, application/xml, text/xml",
+    },
+  });
+  const raw = await res.text();
+  if (!res.ok) {
+    throw new Error(`JPL feed returned ${res.status}. First 300 chars of body: ${raw.slice(0, 300)}`);
+  }
+  const items = parseRssItems(raw);
+  if (items.length === 0) throw new Error(`Parsed zero items from JPL feed. First 300 chars: ${raw.slice(0, 300)}`);
 
   const spacecraft = JSON.parse(fs.readFileSync(SC_PATH, "utf8"));
 

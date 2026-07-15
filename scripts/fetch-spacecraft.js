@@ -59,10 +59,26 @@ function parseRangeAndRate(resultText) {
 
 async function fetchOne(target) {
   const res = await fetch(horizonsUrl(target.horizonsId));
-  if (!res.ok) throw new Error(`Horizons returned ${res.status} for ${target.name}`);
-  const data = await res.json();
+  const raw = await res.text();
+
+  let data;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    throw new Error(`${target.name}: non-JSON response (HTTP ${res.status}): ${raw.slice(0, 200)}`);
+  }
+
+  if (!res.ok) {
+    throw new Error(`${target.name}: HTTP ${res.status} — ${data.message || JSON.stringify(data).slice(0, 200)}`);
+  }
+  if (data.error) {
+    throw new Error(`${target.name}: Horizons error — ${data.error}`);
+  }
+
   const parsed = parseRangeAndRate(data.result || "");
-  if (!parsed) throw new Error(`Could not parse Horizons result for ${target.name}`);
+  if (!parsed) {
+    throw new Error(`${target.name}: could not find $$SOE/$$EOE data block. First 300 chars: ${(data.result || "").slice(0, 300)}`);
+  }
 
   const lightSeconds = (parsed.rangeAu * AU_KM) / 299792.458;
   const hours = Math.floor(lightSeconds / 3600);
@@ -81,18 +97,23 @@ async function main() {
 
   const updates = await Promise.allSettled(TARGETS.map(fetchOne));
 
+  updates.forEach((u, i) => {
+    if (u.status === "rejected") {
+      console.warn(`FAILED — ${TARGETS[i].name}: ${u.reason.message}`);
+    }
+  });
+
   const merged = existing.map((entry) => {
-    const match = updates.find(
-      (u, i) => u.status === "fulfilled" && TARGETS[i].name === entry.name
-    );
-    if (!match) return entry; // keep existing values if this one failed
+    const idx = TARGETS.findIndex((t) => t.name === entry.name);
+    const match = updates[idx];
+    if (!match || match.status !== "fulfilled") return entry; // keep existing values if this one failed
     return { ...entry, ...match.value };
   });
 
   fs.writeFileSync(OUT_PATH, JSON.stringify(merged, null, 2));
-  const failed = updates.filter((u) => u.status === "rejected");
-  if (failed.length) {
-    console.warn(`${failed.length}/${TARGETS.length} spacecraft failed to update, kept old values for those.`);
+  const failedCount = updates.filter((u) => u.status === "rejected").length;
+  if (failedCount) {
+    console.warn(`${failedCount}/${TARGETS.length} spacecraft failed to update, kept old values for those (see FAILED lines above for why).`);
   }
   console.log(`Wrote ${merged.length} spacecraft to ${OUT_PATH}`);
 }
