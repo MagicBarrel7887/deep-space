@@ -1,25 +1,47 @@
 // Pulls current ISS lat/lon and writes src/_data/iss.json.
-// Uses the free wheretheiss.at API (no key required).
-// Docs: https://wheretheiss.at/w/developer
+// Primary: wheretheiss.at (no key required). Falls back to Open Notify if
+// the primary fails for any reason (DNS blip, outage, etc.) — both are
+// small free community-run APIs, so having a backup avoids losing this
+// panel's data over a single provider hiccup.
 
 const fs = require("fs");
 const path = require("path");
 
 const OUT_PATH = path.join(__dirname, "..", "src", "_data", "iss.json");
-const URL = "https://api.wheretheiss.at/v1/satellites/25544";
+
+async function fromWhereTheIss() {
+  const res = await fetch("https://api.wheretheiss.at/v1/satellites/25544");
+  if (!res.ok) throw new Error(`wheretheiss.at returned ${res.status}`);
+  const data = await res.json();
+  if (typeof data.latitude !== "number" || typeof data.longitude !== "number") {
+    throw new Error("wheretheiss.at response missing lat/lon");
+  }
+  return { lat: data.latitude, lon: data.longitude };
+}
+
+async function fromOpenNotify() {
+  const res = await fetch("http://api.open-notify.org/iss-now.json");
+  if (!res.ok) throw new Error(`open-notify returned ${res.status}`);
+  const data = await res.json();
+  const pos = data.iss_position;
+  if (!pos || !pos.latitude || !pos.longitude) {
+    throw new Error("open-notify response missing lat/lon");
+  }
+  return { lat: parseFloat(pos.latitude), lon: parseFloat(pos.longitude) };
+}
 
 async function main() {
-  const res = await fetch(URL);
-  if (!res.ok) throw new Error(`ISS API returned ${res.status}`);
-  const data = await res.json();
-
-  if (typeof data.latitude !== "number" || typeof data.longitude !== "number") {
-    throw new Error("ISS API response missing lat/lon");
+  let result;
+  try {
+    result = await fromWhereTheIss();
+  } catch (err) {
+    console.warn(`wheretheiss.at failed (${err.message}), trying open-notify fallback`);
+    result = await fromOpenNotify();
   }
 
   const out = {
-    lat: Math.round(data.latitude * 10) / 10,
-    lon: Math.round(data.longitude * 10) / 10,
+    lat: Math.round(result.lat * 10) / 10,
+    lon: Math.round(result.lon * 10) / 10,
   };
 
   fs.writeFileSync(OUT_PATH, JSON.stringify(out, null, 2));
@@ -27,6 +49,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error("fetch-iss.js failed, leaving existing data in place:", err.message);
+  console.error("fetch-iss.js failed (both providers), leaving existing data in place:", err.message);
   process.exit(0);
 });
