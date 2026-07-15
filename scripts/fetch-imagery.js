@@ -63,7 +63,7 @@ async function fetchLatestRoverPhoto() {
   for (const rover of ["perseverance", "curiosity"]) {
     try {
       const res = await fetch(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/latest_photos?api_key=${NASA_API_KEY}`
+        `https://rovers.nebulum.one/api/v1/rovers/${rover}/latest_photos`
       );
       if (!res.ok) {
         console.warn(`Mars Photos API (${rover}) returned ${res.status}, trying next rover if any`);
