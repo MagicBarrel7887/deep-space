@@ -23,7 +23,16 @@ const TARGETS = [
 
 const AU_KM = 149597870.7;
 
+function todayAndTomorrow() {
+  const pad = (n) => String(n).padStart(2, "0");
+  const fmt = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+  const today = new Date();
+  const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+  return { start: fmt(today), stop: fmt(tomorrow) };
+}
+
 function horizonsUrl(id) {
+  const { start, stop } = todayAndTomorrow();
   const params = new URLSearchParams({
     format: "json",
     COMMAND: `'${id}'`,
@@ -33,8 +42,8 @@ function horizonsUrl(id) {
     CENTER: "'500@399'", // geocentric — distance from Earth
     QUANTITIES: "'20'", // range (delta, AU) & range-rate (deldot, km/s)
     CSV_FORMAT: "YES",
-    START_TIME: "'now'",
-    STOP_TIME: "'now+1d'",
+    START_TIME: `'${start}'`,
+    STOP_TIME: `'${stop}'`,
     STEP_SIZE: "'1d'",
   });
   return `https://ssd.jpl.nasa.gov/api/horizons.api?${params.toString()}`;
@@ -92,10 +101,25 @@ async function fetchOne(target) {
   };
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function main() {
   const existing = JSON.parse(fs.readFileSync(OUT_PATH, "utf8"));
 
-  const updates = await Promise.allSettled(TARGETS.map(fetchOne));
+  // Sequential, not concurrent — JPL's API doesn't allow simultaneous requests
+  // and will 503 if you hammer it with several at once.
+  const updates = [];
+  for (const target of TARGETS) {
+    try {
+      const value = await fetchOne(target);
+      updates.push({ status: "fulfilled", value });
+    } catch (err) {
+      updates.push({ status: "rejected", reason: err });
+    }
+    await sleep(1500);
+  }
 
   updates.forEach((u, i) => {
     if (u.status === "rejected") {
