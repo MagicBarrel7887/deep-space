@@ -3,15 +3,13 @@
 // "news" array in src/_data/spacecraft.json (launched/status/distance
 // fields are left untouched — this only updates news).
 //
-// JPL news feed: https://www.jpl.nasa.gov/rss/news
-// If that path changes, check https://www.jpl.nasa.gov/news/rss for the
-// current feed URL.
+// JPL news feed: https://www.jpl.nasa.gov/feeds/news/
 
 const fs = require("fs");
 const path = require("path");
 
 const SC_PATH = path.join(__dirname, "..", "src", "_data", "spacecraft.json");
-const FEED_URL = "https://www.jpl.nasa.gov/rss/news";
+const FEED_URL = "https://www.jpl.nasa.gov/feeds/news/";
 const MAX_NEWS_PER_CRAFT = 2;
 
 // Keywords to match per spacecraft, since headlines don't always say the

@@ -31,30 +31,29 @@ function horizonsUrl(id) {
     MAKE_EPHEM: "YES",
     EPHEM_TYPE: "OBSERVER",
     CENTER: "'500@399'", // geocentric — distance from Earth
-    QUANTITIES: "'20,21'", // 20 = range & range-rate, 21 = range-rate
+    QUANTITIES: "'20'", // range (delta, AU) & range-rate (deldot, km/s)
+    CSV_FORMAT: "YES",
     START_TIME: "'now'",
     STOP_TIME: "'now+1d'",
     STEP_SIZE: "'1d'",
   });
-  return `https://ssd-api.jpl.nasa.gov/horizons.api?${params.toString()}`;
+  return `https://ssd.jpl.nasa.gov/api/horizons.api?${params.toString()}`;
 }
 
 function parseRangeAndRate(resultText) {
-  // Data lines sit between $$SOE and $$EOE, columns are whitespace-separated:
-  // date, range (AU), range-rate (km/s) roughly — verify against a sample
-  // response if this stops matching.
+  // With CSV_FORMAT=YES, data lines between $$SOE and $$EOE are comma-separated:
+  // date, delta (AU), deldot (km/s), possibly trailing empty fields.
   const soe = resultText.indexOf("$$SOE");
   const eoe = resultText.indexOf("$$EOE");
   if (soe === -1 || eoe === -1) return null;
   const block = resultText.slice(soe + 5, eoe).trim();
   const line = block.split("\n")[0];
   if (!line) return null;
-  const parts = line.trim().split(/\s+/);
-  // Last two numeric fields are typically range (AU) and range-rate (km/s)
-  const nums = parts.filter((p) => /^-?\d+(\.\d+)?$/.test(p));
+  const cells = line.split(",").map((c) => c.trim());
+  const nums = cells.filter((c) => /^-?\d+(\.\d+)?$/.test(c)).map(Number);
   if (nums.length < 2) return null;
-  const rangeAu = parseFloat(nums[nums.length - 2]);
-  const rangeRateKms = parseFloat(nums[nums.length - 1]);
+  const rangeAu = nums[0];
+  const rangeRateKms = nums[1];
   return { rangeAu, rangeRateKms };
 }
 
