@@ -94,12 +94,10 @@
     "id": "DSS-36",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "DSS",
+    "target": "—",
     "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-43",
