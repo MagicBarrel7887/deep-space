@@ -82,17 +82,6 @@
     "rtlt": null
   },
   {
-    "id": "DSS-65",
-    "site": "Unknown",
-    "diameter": "?",
-    "target": "ORX",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-55",
     "site": "Madrid",
     "diameter": "34m",
@@ -141,7 +130,7 @@
     "target": "ACE",
     "band": "—",
     "status": "active",
-    "signalType": "data",
+    "signalType": null,
     "dataRate": null,
     "rtlt": null
   }
