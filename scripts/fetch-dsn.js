@@ -20,18 +20,23 @@ const CONFIG_URL = "https://eyes.jpl.nasa.gov/dsn/config.xml";
 const dsnUrl = () => `https://eyes.jpl.nasa.gov/dsn/data/dsn.xml?r=${Math.floor(Date.now() / 5000)}`;
 
 const DISH_INFO = {
+  DSS13: { site: "Goldstone", diameter: "34m" },
   DSS14: { site: "Goldstone", diameter: "70m" },
+  DSS15: { site: "Goldstone", diameter: "34m" },
   DSS24: { site: "Goldstone", diameter: "34m" },
   DSS25: { site: "Goldstone", diameter: "34m" },
   DSS26: { site: "Goldstone", diameter: "34m" },
+  DSS27: { site: "Goldstone", diameter: "34m" },
   DSS34: { site: "Canberra", diameter: "34m" },
   DSS35: { site: "Canberra", diameter: "34m" },
   DSS36: { site: "Canberra", diameter: "34m" },
   DSS43: { site: "Canberra", diameter: "70m" },
+  DSS45: { site: "Canberra", diameter: "34m" },
   DSS54: { site: "Madrid", diameter: "34m" },
   DSS55: { site: "Madrid", diameter: "34m" },
   DSS56: { site: "Madrid", diameter: "34m" },
   DSS63: { site: "Madrid", diameter: "70m" },
+  DSS65: { site: "Madrid", diameter: "34m" },
 };
 
 function getAttrs(tagInner) {
@@ -108,7 +113,7 @@ async function main() {
     if (!id) continue;
     const info = DISH_INFO[id] || { site: "Unknown", diameter: "?" };
 
-    const targets = extractSelfClosing(body, "target").filter((t) => t.name && t.name !== "DSN");
+    const targets = extractSelfClosing(body, "target").filter((t) => t.name && t.name !== "DSN" && t.name !== "DSS");
     const downSignals = extractSelfClosing(body, "downSignal");
 
     if (targets.length === 0) {
