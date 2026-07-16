@@ -35,8 +35,8 @@
     "target": "THC",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "131.1 kbps",
     "rtlt": null
   },
   {
@@ -60,17 +60,6 @@
     "rtlt": null
   },
   {
-    "id": "DSS-54",
-    "site": "Madrid",
-    "diameter": "34m",
-    "target": "JWST",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-63",
     "site": "Madrid",
     "diameter": "70m",
@@ -78,7 +67,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "707 bps",
+    "dataRate": "531 bps",
     "rtlt": null
   },
   {
@@ -89,6 +78,28 @@
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
+  },
+  {
+    "id": "DSS-54",
+    "site": "Madrid",
+    "diameter": "34m",
+    "target": "CHDR",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "1.2 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-65",
+    "site": "Madrid",
+    "diameter": "34m",
+    "target": "STA",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "480.0 kbps",
+    "rtlt": null
   },
   {
     "id": "DSS-36",
@@ -106,8 +117,8 @@
     "target": "SPP",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "4.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -128,7 +139,7 @@
     "target": "ACE",
     "band": "—",
     "status": "active",
-    "signalType": "data",
+    "signalType": null,
     "dataRate": null,
     "rtlt": null
   }
