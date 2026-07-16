@@ -1,6 +1,26 @@
 [
-  { "date": "Jul 18", "label": "Europa Clipper — Mars gravity assist trajectory check" },
-  { "date": "Jul 24", "label": "Asteroid 2026 JF1 close approach, 0.03 AU" },
-  { "date": "Aug 02", "label": "Perseid meteor shower peak" },
-  { "date": "Aug 09", "label": "New Horizons KBO candidate observation window" }
+  {
+    "date": "Jul 18",
+    "label": "Europa Clipper — Mars gravity assist trajectory check"
+  },
+  {
+    "date": "Aug 02",
+    "label": "Perseid meteor shower peak"
+  },
+  {
+    "date": "Aug 09",
+    "label": "New Horizons KBO candidate observation window"
+  },
+  {
+    "date": "Jul 16",
+    "label": "Asteroid 2026 NW1 close approach, 0.02 AU"
+  },
+  {
+    "date": "Jul 16",
+    "label": "Asteroid 2026 MQ3 close approach, 0.03 AU"
+  },
+  {
+    "date": "Jul 17",
+    "label": "Asteroid 2025 PN7 close approach, 0.03 AU"
+  }
 ]
