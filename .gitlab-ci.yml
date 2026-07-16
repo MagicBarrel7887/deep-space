@@ -13,6 +13,17 @@ fetch-data:
     - npm install
   script:
     - npm run fetch:all
+  after_script:
+    - |
+      git config user.email "ci@ponder.net"
+      git config user.name "GitLab CI"
+      git add src/_data src/img
+      if ! git diff --staged --quiet; then
+        git commit -m "chore: update live data [skip fetch]"
+        git push "http://oauth2:${GITLAB_PUSH_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git" "HEAD:${CI_COMMIT_REF_NAME}" -o ci.skip
+      else
+        echo "No data changes to commit"
+      fi
   artifacts:
     paths:
       - src/_data

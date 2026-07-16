@@ -5,6 +5,10 @@
 // protection on their image hosts — so storing a local copy each run is
 // more reliable, especially for something running unattended on signage.
 //
+// Mars images come from NASA's own official raw-images feed at
+// mars.nasa.gov/rss/api — the community-run mars-photos API this used to
+// call has been archived (per NASA's own deprecation notice).
+//
 // GOES/Himawari Earth imagery and JWST/Hubble releases don't have one clean
 // "latest image" JSON endpoint, so those two slots stay manually curated —
 // update STATIC_EXTRAS below when you want to swap them, and drop a matching
@@ -56,23 +60,85 @@ async function fetchApod() {
   };
 }
 
+const MARS_SOURCES = [
+  { category: "mars2020", rover: "Perseverance", site: "Jezero Crater" },
+  { category: "msl", rover: "Curiosity", site: "Gale Crater" },
+];
+
+function marsFeedUrl(category) {
+  const params = new URLSearchParams({
+    category,
+    feed: "raw_images",
+    feedtype: "json",
+    num: "1",
+    page: "0",
+    order: "sol desc",
+  });
+  return `https://mars.nasa.gov/rss/api/?${params.toString()}`;
+}
+
 async function fetchLatestRoverPhoto() {
-  // Perseverance first, fall back to Curiosity — this is a community-maintained
-  // API (not run by NASA directly) with occasional reliability hiccups on
-  // individual rover endpoints.
+  // Try NASA's own official raw-images feed first (the community-run
+  // mars-photos API this used to call has been archived). If that fails
+  // for both rovers, fall back to a third-party wrapper as a last resort.
+  for (const src of MARS_SOURCES) {
+    try {
+      const res = await fetch(marsFeedUrl(src.category));
+      const raw = await res.text();
+      let data;
+      try {
+        data = JSON.parse(raw);
+      } catch {
+        console.warn(`${src.rover}: non-JSON response (HTTP ${res.status}): ${raw.slice(0, 200)}`);
+        continue;
+      }
+
+      const images = data.images || data.items || [];
+      if (!images.length) {
+        console.warn(`${src.rover}: zero images in response. Top-level keys: ${Object.keys(data).join(", ")}`);
+        continue;
+      }
+
+      const img = images[0];
+      const imgUrl =
+        (img.image_files && (img.image_files.large || img.image_files.full_res || img.image_files.medium)) ||
+        img.img_src ||
+        img.url;
+      if (!imgUrl) {
+        console.warn(`${src.rover}: could not find an image URL field. Sample record: ${JSON.stringify(img).slice(0, 300)}`);
+        continue;
+      }
+
+      const localUrl = await downloadImage(imgUrl, "mars-latest");
+      const cameraName =
+        (img.camera && (img.camera.instrument || img.camera.camera_model_name)) || img.instrument || "rover camera";
+      const dateTaken = img.date_taken_mars || img.date_taken_utc || img.date_taken || "";
+
+      return {
+        tag: `MARS · SOL ${img.sol ?? "?"}`,
+        title: `${src.rover} — ${cameraName}`,
+        caption: `${src.site}${dateTaken ? ", " + dateTaken : ""}`,
+        url: localUrl,
+      };
+    } catch (err) {
+      console.warn(`${src.rover} official feed threw: ${err.message}`);
+    }
+  }
+
+  // Last resort: a third-party wrapper API (not NASA-run, so no uptime
+  // guarantee either, but it's an independent source from the official
+  // feed above, so worth trying before giving up entirely).
   for (const rover of ["perseverance", "curiosity"]) {
     try {
-      const res = await fetch(
-        `https://rovers.nebulum.one/api/v1/rovers/${rover}/latest_photos`
-      );
+      const res = await fetch(`https://rovers.nebulum.one/api/v1/rovers/${rover}/latest_photos`);
       if (!res.ok) {
-        console.warn(`Mars Photos API (${rover}) returned ${res.status}, trying next rover if any`);
+        console.warn(`nebulum.one (${rover}) returned ${res.status}`);
         continue;
       }
       const data = await res.json();
       const photo = (data.latest_photos || [])[0];
       if (!photo) {
-        console.warn(`No photos returned for ${rover}, trying next rover if any`);
+        console.warn(`nebulum.one (${rover}): no photos in response`);
         continue;
       }
       const localUrl = await downloadImage(photo.img_src, "mars-latest");
@@ -83,10 +149,11 @@ async function fetchLatestRoverPhoto() {
         url: localUrl,
       };
     } catch (err) {
-      console.warn(`${rover} fetch threw: ${err.message}, trying next rover if any`);
+      console.warn(`nebulum.one (${rover}) threw: ${err.message}`);
     }
   }
-  throw new Error("All rover endpoints failed");
+
+  throw new Error("All Mars image sources failed (official feed x2 + nebulum.one x2)");
 }
 
 async function main() {

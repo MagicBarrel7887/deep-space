@@ -56,8 +56,8 @@ function project(lat, lon, w, h) {
 
 function renderMap(body, data) {
   const w = 600, h = 260;
-  const bg = body === "mars" ? "#170f0a" : body === "moon" ? "#101014" : "#0a0e1e";
-  const grid = body === "mars" ? "#2e1e14" : body === "moon" ? "#1e1e24" : "#1c2340";
+  const bg = body === "mars" ? "#1c1108" : body === "moon" ? "#16161e" : "#0c1733";
+  const grid = body === "mars" ? "#3a2818" : body === "moon" ? "#26262f" : "#233258";
   const markerColor = body === "mars" ? "#e0a06a" : body === "moon" ? "#c7d2f0" : "#7dd3c0";
 
   let points = [];
