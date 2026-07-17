@@ -26,8 +26,8 @@
     "target": "CGO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.0 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -37,8 +37,8 @@
     "target": "TGO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "416.7 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -51,24 +51,35 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-65",
+    "id": "DSS-54",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "KPLO",
+    "target": "JWST",
     "band": "—",
     "status": "active",
-    "signalType": null,
+    "signalType": "data",
+    "dataRate": "40.0 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-63",
+    "site": "Madrid",
+    "diameter": "70m",
+    "target": "NHPC",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   },
   {
-    "id": "DSS-54",
+    "id": "DSS-65",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "SOHO",
+    "target": "VGR1",
     "band": "—",
     "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   },
@@ -76,21 +87,21 @@
     "id": "DSS-53",
     "site": "Unknown",
     "diameter": "?",
-    "target": "CAPS",
+    "target": "VGR1",
     "band": "—",
     "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   },
   {
-    "id": "DSS-63",
+    "id": "DSS-56",
     "site": "Madrid",
-    "diameter": "70m",
+    "diameter": "34m",
     "target": "VGR1",
     "band": "—",
     "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   },
@@ -101,8 +112,8 @@
     "target": "ESCG",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "8.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -123,8 +134,8 @@
     "target": "MMS3",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "2.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
