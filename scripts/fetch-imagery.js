@@ -1,18 +1,23 @@
-// Pulls NASA APOD and the latest Mars rover photo, DOWNLOADS the actual
-// image bytes into src/img/, and points imagery.json at the local file
-// (e.g. "/img/apod.jpg") instead of NASA's own URL. Hotlinking their URLs
-// directly wasn't loading reliably on the live site — likely hotlink/CORS
-// protection on their image hosts — so storing a local copy each run is
-// more reliable, especially for something running unattended on signage.
+// Pulls NASA APOD, the latest Mars rover photo, and a full-globe Earth
+// image, DOWNLOADS the actual image bytes into src/img/, and points
+// imagery.json at the local file (e.g. "/img/apod.jpg") instead of NASA's
+// own URL. Hotlinking their URLs directly wasn't loading reliably on the
+// live site — likely hotlink/CORS protection — so storing a local copy
+// each run is more reliable, especially for something running unattended
+// on signage.
 //
 // Mars images come from NASA's own official raw-images feed at
 // mars.nasa.gov/rss/api — the community-run mars-photos API this used to
-// call has been archived (per NASA's own deprecation notice).
+// call has been archived (per NASA's own deprecation notice), with a
+// third-party wrapper as a last-resort fallback.
 //
-// GOES/Himawari Earth imagery and JWST/Hubble releases don't have one clean
-// "latest image" JSON endpoint, so those two slots stay manually curated —
-// update STATIC_EXTRAS below when you want to swap them, and drop a matching
-// image into src/img/ by hand.
+// Earth imagery comes from NASA's Worldview Snapshots API, which sits on
+// top of GIBS (the official replacement for the also-archived Earth API).
+// No key required.
+//
+// JWST/Hubble releases don't have one clean "latest image" JSON endpoint,
+// so that slot stays manually curated — update STATIC_EXTRAS below when
+// you want to swap it, and drop a matching image into src/img/ by hand.
 
 const fs = require("fs");
 const path = require("path");
@@ -22,9 +27,20 @@ const IMG_DIR = path.join(__dirname, "..", "src", "img");
 const NASA_API_KEY = process.env.NASA_API_KEY || "DEMO_KEY";
 
 const STATIC_EXTRAS = [
-  { tag: "EARTH", title: "Full Disk — GOES-19", caption: "Western hemisphere, visible band" },
   { tag: "JUPITER", title: "JWST NIRCam", caption: "Great Red Spot region, near-infrared composite" },
 ];
+
+// --- How to fill in the Jupiter/JWST slot above with a real local image ---
+//
+// JWST latest release (Jupiter / anything else):
+//   https://www.stsci.edu/jwst/science-execution/program-information (browse
+//   by program) or simpler: https://webbtelescope.org/news/latest-news —
+//   pick an image, download the "Full Res" or a reasonably sized JPG, save
+//   as src/img/jwst-latest.jpg, add "url": "/img/jwst-latest.jpg" above.
+//   JWST doesn't release images on a predictable schedule, so this one is
+//   realistically a manual swap-in every so often rather than something to
+//   automate — update the "title"/"caption" text above to match whatever
+//   image you drop in.
 
 function extFromContentType(ct) {
   if (!ct) return "jpg";
@@ -60,7 +76,44 @@ async function fetchApod() {
   };
 }
 
-const MARS_SOURCES = [
+async function fetchEarthImage() {
+  // Worldview Snapshots API — official replacement for the archived Earth
+  // API, sits on top of GIBS. No key required. Imagery for "today" often
+  // isn't fully processed yet, so request yesterday's date (UTC) to be safe.
+  const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
+  const pad = (n) => String(n).padStart(2, "0");
+  const dateStr = `${yesterday.getUTCFullYear()}-${pad(yesterday.getUTCMonth() + 1)}-${pad(yesterday.getUTCDate())}`;
+
+  const params = new URLSearchParams({
+    REQUEST: "GetSnapshot",
+    TIME: dateStr,
+    BBOX: "-90,-180,90,180", // full globe, EPSG:4326 order is (lat,lon)
+    CRS: "EPSG:4326",
+    LAYERS: "VIIRS_SNPP_CorrectedReflectance_TrueColor,Coastlines",
+    FORMAT: "image/jpeg",
+    WIDTH: "800",
+    HEIGHT: "450",
+  });
+  const url = `https://wvs.earthdata.nasa.gov/api/v1/snapshot?${params.toString()}`;
+
+  const res = await fetch(url);
+  const contentType = res.headers.get("content-type") || "";
+  if (!res.ok || !contentType.includes("image")) {
+    const bodyPreview = contentType.includes("image") ? "(binary)" : (await res.text()).slice(0, 300);
+    throw new Error(`Worldview Snapshots returned HTTP ${res.status}, content-type ${contentType}: ${bodyPreview}`);
+  }
+
+  const buf = Buffer.from(await res.arrayBuffer());
+  fs.mkdirSync(IMG_DIR, { recursive: true });
+  fs.writeFileSync(path.join(IMG_DIR, "earth.jpg"), buf);
+
+  return {
+    tag: "EARTH",
+    title: "Full Globe — VIIRS True Color",
+    caption: `NASA GIBS/Worldview, ${dateStr}`,
+    url: "/img/earth.jpg",
+  };
+}
   { category: "mars2020", rover: "Perseverance", site: "Jezero Crater" },
   { category: "msl", rover: "Curiosity", site: "Gale Crater" },
 ];
@@ -157,25 +210,38 @@ async function fetchLatestRoverPhoto() {
 }
 
 async function main() {
-  const results = await Promise.allSettled([fetchApod(), fetchLatestRoverPhoto()]);
+  const existing = fs.existsSync(OUT_PATH) ? JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) : [];
+  const findExisting = (tagPrefix) => existing.find((e) => e.tag.startsWith(tagPrefix));
 
-  results.forEach((r, i) => {
-    if (r.status === "rejected") {
-      const label = i === 0 ? "APOD" : "Mars rover photo";
-      console.warn(`FAILED — ${label}: ${r.reason.message}`);
+  const [apod, earth, mars] = await Promise.allSettled([fetchApod(), fetchEarthImage(), fetchLatestRoverPhoto()]);
+
+  const labeled = [
+    { label: "APOD", tagPrefix: "APOD", result: apod },
+    { label: "Earth", tagPrefix: "EARTH", result: earth },
+    { label: "Mars rover photo", tagPrefix: "MARS", result: mars },
+  ];
+
+  const ordered = [];
+  labeled.forEach(({ label, tagPrefix, result }) => {
+    if (result.status === "fulfilled") {
+      ordered.push(result.value);
+    } else {
+      console.warn(`FAILED — ${label}: ${result.reason.message}`);
+      const prev = findExisting(tagPrefix);
+      if (prev) ordered.push(prev); // keep last known good for just this slot
     }
   });
 
-  const live = results.filter((r) => r.status === "fulfilled").map((r) => r.value);
+  const merged = [...ordered, ...STATIC_EXTRAS];
+  const liveCount = labeled.filter((l) => l.result.status === "fulfilled").length;
 
-  if (live.length === 0) {
-    console.warn("Both APOD and rover photo fetches failed, keeping existing imagery.json");
+  if (liveCount === 0 && ordered.length === 0) {
+    console.warn("All live imagery fetches failed and no previous data to fall back on, keeping placeholder state");
     return;
   }
 
-  const merged = [...live, ...STATIC_EXTRAS];
   fs.writeFileSync(OUT_PATH, JSON.stringify(merged, null, 2));
-  console.log(`Wrote ${merged.length} imagery entries to ${OUT_PATH} (${live.length} with freshly downloaded local images)`);
+  console.log(`Wrote ${merged.length} imagery entries to ${OUT_PATH} (${liveCount}/3 sources freshly fetched this run)`);
 }
 
 main().catch((err) => {
