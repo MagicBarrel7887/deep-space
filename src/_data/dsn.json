@@ -6,8 +6,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "8.2 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -17,8 +17,8 @@
     "target": "EURC",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "2.0 kbps",
     "rtlt": null
   },
   {
@@ -46,8 +46,8 @@
     "target": "JWST",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "40.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -68,8 +68,8 @@
     "target": "CHDR",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.2 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -79,8 +79,8 @@
     "target": "MMS1",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "1.3 Mbps",
     "rtlt": null
   },
   {
@@ -100,17 +100,6 @@
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
-  },
-  {
-    "id": "DSS-36",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "MRO",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
   },
   {
     "id": "DSS-35",
@@ -141,6 +130,17 @@
     "status": "active",
     "signalType": "data",
     "dataRate": "714.3 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "SOHO",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   }
 ]
