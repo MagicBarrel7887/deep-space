@@ -1,14 +1,15 @@
 [
   {
+    "tag": "EARTH",
+    "title": "Full Globe — VIIRS True Color",
+    "caption": "NASA GIBS/Worldview, 2026-07-16",
+    "url": "/img/earth.jpg"
+  },
+  {
     "tag": "MARS · SOL 1921",
     "title": "Perseverance — NAVCAM_RIGHT",
     "caption": "Jezero Crater, Sol-01921M13:16:06.360",
     "url": "/img/mars-latest.jpg"
-  },
-  {
-    "tag": "EARTH",
-    "title": "Full Disk — GOES-19",
-    "caption": "Western hemisphere, visible band"
   },
   {
     "tag": "JUPITER",

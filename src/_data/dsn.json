@@ -130,8 +130,8 @@
     "target": "IMAP",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "714.3 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
