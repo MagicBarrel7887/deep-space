@@ -1,5 +1,11 @@
 [
   {
+    "tag": "APOD",
+    "title": "The Dust Trail of Comet Tempel 2",
+    "caption": "Comet 10P/Tempel 2 orbits the Sun once every 5.",
+    "url": "/img/apod.jpg"
+  },
+  {
     "tag": "EARTH",
     "title": "Full Globe — VIIRS True Color",
     "caption": "NASA GIBS/Worldview, 2026-07-16",
