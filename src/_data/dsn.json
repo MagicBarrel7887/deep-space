@@ -37,8 +37,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "8.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -123,8 +123,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "14.2 kbps",
     "rtlt": null
   },
   {
@@ -142,9 +142,11 @@
     "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "—",
+    "target": "MEX",
     "band": "—",
-    "status": "idle",
-    "note": "no active target in feed right now"
+    "status": "active",
+    "signalType": "data",
+    "dataRate": null,
+    "rtlt": null
   }
 ]
