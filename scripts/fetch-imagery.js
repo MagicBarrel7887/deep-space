@@ -114,6 +114,8 @@ async function fetchEarthImage() {
     url: "/img/earth.jpg",
   };
 }
+
+const MARS_SOURCES = [
   { category: "mars2020", rover: "Perseverance", site: "Jezero Crater" },
   { category: "msl", rover: "Curiosity", site: "Gale Crater" },
 ];
