@@ -15,8 +15,8 @@
     "target": "MRO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.0 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -37,8 +37,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "8.5 Mbps",
     "rtlt": null
   },
   {
@@ -80,7 +80,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "160 bps",
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -90,7 +90,7 @@
     "target": "VGR1",
     "band": "—",
     "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   },
@@ -101,18 +101,7 @@
     "target": "VGR1",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "ESCG",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   },
@@ -134,8 +123,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "14.2 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -148,5 +137,14 @@
     "signalType": "data",
     "dataRate": "1.0 kbps",
     "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
   }
 ]

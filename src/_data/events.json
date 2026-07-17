@@ -10,5 +10,17 @@
   {
     "date": "Aug 09",
     "label": "New Horizons KBO candidate observation window"
+  },
+  {
+    "date": "Jul 17",
+    "label": "Asteroid 2025 PN7 close approach, 0.03 AU"
+  },
+  {
+    "date": "Jul 17",
+    "label": "Asteroid 2026 NW close approach, 0.04 AU"
+  },
+  {
+    "date": "Jul 18",
+    "label": "Asteroid 2026 NF close approach, 0.03 AU"
   }
 ]
