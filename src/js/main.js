@@ -56,25 +56,13 @@ function project(lat, lon, w, h) {
 
 function renderMap(body, data) {
   const w = 600, h = 260;
-  const bg = body === "mars" ? "#1c1108" : body === "moon" ? "#16161e" : "#0c1733";
-  const grid = body === "mars" ? "#3a2818" : body === "moon" ? "#26262f" : "#233258";
-  const markerColor = body === "mars" ? "#e0a06a" : body === "moon" ? "#c7d2f0" : "#7dd3c0";
+  const bg = body === "mars" ? "#1c1108" : "#16161e";
+  const grid = body === "mars" ? "#3a2818" : "#26262f";
+  const markerColor = body === "mars" ? "#e0a06a" : "#c7d2f0";
 
-  let points = [];
-  let orbiters = [];
-  if (body === "mars") {
-    points = data.mars.filter((a) => a.type !== "orbit").map((a) => ({ ...a, sub: a.note }));
-    orbiters = data.mars.filter((a) => a.type === "orbit");
-  } else if (body === "moon") {
-    points = data.moon.filter((a) => a.type !== "orbit").map((a) => ({ ...a, sub: a.note }));
-    orbiters = data.moon.filter((a) => a.type === "orbit");
-  } else {
-    points = data.sites.map((s) => {
-      const dishesHere = data.dsn.filter((d) => d.site === s.name);
-      const activeCount = dishesHere.filter((d) => d.status === "active").length;
-      return { ...s, sub: `${activeCount}/${dishesHere.length}`, active: activeCount > 0 };
-    });
-  }
+  const source = body === "mars" ? data.mars : data.moon;
+  const points = source.filter((a) => a.type !== "orbit").map((a) => ({ ...a, sub: a.note }));
+  const orbiters = source.filter((a) => a.type === "orbit");
 
   const gridLines = [];
   for (let i = 0; i <= 6; i++) {
@@ -87,24 +75,14 @@ function renderMap(body, data) {
   const markers = points
     .map((p) => {
       const [x, y] = project(p.lat, p.lon, w, h);
-      const color = p.active === false ? "#4b5578" : markerColor;
       const label = `${p.name}${p.sub ? " · " + p.sub : ""}`;
       return `
-        <circle cx="${x}" cy="${y}" r="5" fill="${color}" />
-        <circle cx="${x}" cy="${y}" r="9" fill="none" stroke="${color}" stroke-width="1" opacity="0.5" />
+        <circle cx="${x}" cy="${y}" r="5" fill="${markerColor}" />
+        <circle cx="${x}" cy="${y}" r="9" fill="none" stroke="${markerColor}" stroke-width="1" opacity="0.5" />
         <text x="${x + 12}" y="${y + 4}" fill="#c7d2f0" font-size="10" font-family="monospace">${label}</text>
       `;
     })
     .join("");
-
-  let issMarker = "";
-  if (body === "earth" && data.iss) {
-    const [x, y] = project(data.iss.lat, data.iss.lon, w, h);
-    issMarker = `
-      <circle cx="${x}" cy="${y}" r="4" fill="#f2c14e" />
-      <text x="${x + 10}" y="${y + 4}" fill="#f2c14e" font-size="10" font-family="monospace">ISS</text>
-    `;
-  }
 
   return {
     svg: `
@@ -113,18 +91,83 @@ function renderMap(body, data) {
         ${gridLines.join("")}
         <line x1="0" y1="${h / 2}" x2="${w}" y2="${h / 2}" stroke="${grid}" stroke-width="1.4" />
         ${markers}
-        ${issMarker}
       </svg>
     `,
     orbiters,
   };
 }
 
+// ---- Earth view: real Leaflet map with actual geography, not the stylized grid above ----
+let leafletMap = null;
+let leafletMarkers = [];
+
+function initLeafletMap() {
+  if (leafletMap || typeof L === "undefined") return;
+  leafletMap = L.map("map-leaflet", {
+    zoomControl: false,
+    dragging: false,
+    touchZoom: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    keyboard: false,
+    tap: false,
+  }).setView([15, 20], 2);
+
+  // CartoDB's free dark basemap — no API key required, matches the dashboard's palette
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
+    subdomains: "abcd",
+    maxZoom: 19,
+  }).addTo(leafletMap);
+}
+
+function drawLeafletMarkers(data) {
+  if (!leafletMap) return;
+  leafletMarkers.forEach((m) => leafletMap.removeLayer(m));
+  leafletMarkers = [];
+
+  data.sites.forEach((s) => {
+    const dishesHere = data.dsn.filter((d) => d.site === s.name);
+    const activeCount = dishesHere.filter((d) => d.status === "active").length;
+    const color = activeCount > 0 ? "#7dd3c0" : "#4b5578";
+    const marker = L.circleMarker([s.lat, s.lon], {
+      radius: 7,
+      color,
+      fillColor: color,
+      fillOpacity: 0.9,
+      weight: 2,
+    })
+      .bindTooltip(`${s.name} · ${activeCount}/${dishesHere.length}`, {
+        permanent: true,
+        direction: "right",
+        offset: [8, 0],
+        className: "map-tooltip",
+      })
+      .addTo(leafletMap);
+    leafletMarkers.push(marker);
+  });
+
+  if (data.iss && typeof data.iss.lat === "number") {
+    const issMarker = L.circleMarker([data.iss.lat, data.iss.lon], {
+      radius: 5,
+      color: "#f2c14e",
+      fillColor: "#f2c14e",
+      fillOpacity: 1,
+      weight: 2,
+    })
+      .bindTooltip("ISS", { permanent: true, direction: "right", offset: [8, 0], className: "map-tooltip" })
+      .addTo(leafletMap);
+    leafletMarkers.push(issMarker);
+  }
+}
+
 function initMapRotator() {
   const mapEl = document.getElementById("map-svg");
+  const leafletEl = document.getElementById("map-leaflet");
   const labelEl = document.getElementById("map-label");
   const orbitEl = document.getElementById("map-orbit-note");
-  if (!mapEl) return;
+  if (!mapEl || !leafletEl) return;
 
   const data = {
     sites: readData("data-sites"),
@@ -142,13 +185,28 @@ function initMapRotator() {
 
   let index = 0;
   function draw() {
-    const { svg, orbiters } = renderMap(views[index].id, data);
-    mapEl.innerHTML = svg;
-    if (labelEl) labelEl.textContent = views[index].label;
-    if (orbitEl) {
-      orbitEl.textContent = orbiters.length
-        ? `In orbit (no fixed ground position): ${orbiters.map((o) => `${o.name} (${o.note})`).join(" · ")}`
-        : "";
+    const view = views[index];
+    if (labelEl) labelEl.textContent = view.label;
+
+    if (view.id === "earth") {
+      mapEl.classList.add("hidden");
+      leafletEl.classList.add("visible");
+      initLeafletMap();
+      drawLeafletMarkers(data);
+      // container was hidden (display:none) when Leaflet first measured it —
+      // force a re-check of its size now that it's visible, or tiles render wrong
+      setTimeout(() => leafletMap && leafletMap.invalidateSize(), 50);
+      if (orbitEl) orbitEl.textContent = "";
+    } else {
+      leafletEl.classList.remove("visible");
+      mapEl.classList.remove("hidden");
+      const { svg, orbiters } = renderMap(view.id, data);
+      mapEl.innerHTML = svg;
+      if (orbitEl) {
+        orbitEl.textContent = orbiters.length
+          ? `In orbit (no fixed ground position): ${orbiters.map((o) => `${o.name} (${o.note})`).join(" · ")}`
+          : "";
+      }
     }
   }
   draw();
@@ -156,10 +214,12 @@ function initMapRotator() {
   // Auto-cycles on its own — no seconds field to configure, just a fixed sensible pace.
   setInterval(() => {
     mapEl.style.opacity = 0;
+    leafletEl.style.opacity = 0;
     setTimeout(() => {
       index = (index + 1) % views.length;
       draw();
       mapEl.style.opacity = 1;
+      leafletEl.style.opacity = 1;
     }, 600);
   }, 120000);
 }

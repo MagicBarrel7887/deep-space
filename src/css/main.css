@@ -232,8 +232,27 @@ body {
 .sig-rtlt { font-style: italic; }
 
 /* Ground map */
-.map-wrap { padding: 0; }
+.map-wrap { padding: 0; position: relative; }
 .map-svg { height: 224px; transition: opacity 600ms ease; border: 1px solid var(--border); }
+.map-leaflet { height: 224px; border: 1px solid var(--border); display: none; background: #0c1733; }
+.map-leaflet.visible { display: block; }
+.map-svg.hidden { display: none; }
+.leaflet-control-attribution {
+  background: rgba(8, 10, 22, 0.7) !important;
+  color: var(--faint) !important;
+  font-size: 8px !important;
+}
+.leaflet-control-attribution a { color: var(--muted) !important; }
+.map-tooltip {
+  background: rgba(8, 10, 22, 0.85) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  font-family: inherit !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  box-shadow: none !important;
+}
+.map-tooltip::before { display: none !important; }
 .map-orbit-note { font-size: 9px; padding: 6px 8px 0; }
 
 .foot {
