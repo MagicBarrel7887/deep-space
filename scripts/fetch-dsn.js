@@ -81,37 +81,48 @@ function formatRtlt(seconds) {
 }
 
 async function fetchSpacecraftNames() {
+  console.log(`Fetching spacecraft name map from ${CONFIG_URL} ...`);
   try {
     const res = await fetch(CONFIG_URL);
-    if (!res.ok) return {};
+    if (!res.ok) {
+      console.warn(`config.xml returned HTTP ${res.status} — will show raw target codes instead of friendly names`);
+      return {};
+    }
     const xml = await res.text();
     const map = {};
     extractSelfClosing(xml, "spacecraft").forEach((attrs) => {
       if (attrs.name) map[attrs.name] = attrs.friendlyName || attrs.name;
     });
+    console.log(`Got ${Object.keys(map).length} spacecraft names from config.xml`);
     return map;
-  } catch {
-    return {}; // fall back to raw target codes if config fetch fails
+  } catch (err) {
+    console.warn(`config.xml fetch threw (${err.message}) — will show raw target codes instead of friendly names`);
+    return {};
   }
 }
 
 async function main() {
+  console.log(`Fetching DSN status from ${dsnUrl()} ...`);
   const [dsnRes, nameMap] = await Promise.all([
     fetch(dsnUrl(), { headers: { "User-Agent": "deep-space-dashboard/1.0" } }),
     fetchSpacecraftNames(),
   ]);
   if (!dsnRes.ok) throw new Error(`DSN feed returned ${dsnRes.status}`);
   const xml = await dsnRes.text();
+  console.log(`DSN feed responded OK, ${xml.length} bytes, parsing dish blocks...`);
 
   const dishBlockRe = /<dish\b([^>]*)>([\s\S]*?)<\/dish>/g;
   const results = [];
+  let unknownDishIds = [];
   let m;
   while ((m = dishBlockRe.exec(xml)) !== null) {
     const dishAttrs = getAttrs(m[1]);
     const body = m[2];
     const id = dishAttrs.name; // e.g. "DSS14"
     if (!id) continue;
-    const info = DISH_INFO[id] || { site: "Unknown", diameter: "?" };
+    const info = DISH_INFO[id];
+    if (!info) unknownDishIds.push(id);
+    const resolvedInfo = info || { site: "Unknown", diameter: "?" };
 
     const targets = extractSelfClosing(body, "target").filter((t) => t.name && t.name !== "DSN" && t.name !== "DSS");
     const downSignals = extractSelfClosing(body, "downSignal");
@@ -119,8 +130,8 @@ async function main() {
     if (targets.length === 0) {
       results.push({
         id: id.replace("DSS", "DSS-"),
-        site: info.site,
-        diameter: info.diameter,
+        site: resolvedInfo.site,
+        diameter: resolvedInfo.diameter,
         target: "—",
         band: "—",
         status: "idle",
@@ -137,8 +148,8 @@ async function main() {
 
     results.push({
       id: id.replace("DSS", "DSS-"),
-      site: info.site,
-      diameter: info.diameter,
+      site: resolvedInfo.site,
+      diameter: resolvedInfo.diameter,
       target: friendly,
       band: signal ? bandFromFrequencyHz(signal.frequency) || "—" : "—",
       status: "active",
@@ -146,6 +157,10 @@ async function main() {
       dataRate: signal ? formatDataRate(signal.dataRate) : null,
       rtlt: formatRtlt(target.rtlt), // round-trip light time — how long a signal takes there and back
     });
+  }
+
+  if (unknownDishIds.length > 0) {
+    console.warn(`Dish IDs not in DISH_INFO lookup table (shown as "Unknown"): ${unknownDishIds.join(", ")} — add these to DISH_INFO if they keep appearing`);
   }
 
   if (results.length === 0) throw new Error("Parsed zero dishes from DSN feed — check feed format");

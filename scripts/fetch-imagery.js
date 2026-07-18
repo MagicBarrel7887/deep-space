@@ -51,22 +51,30 @@ function extFromContentType(ct) {
 }
 
 async function downloadImage(url, baseName) {
+  console.log(`Downloading image from ${url} ...`);
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`Image download failed (${res.status}): ${url}`);
+  if (!res.ok) throw new Error(`Image download failed (HTTP ${res.status}): ${url}`);
   const contentType = res.headers.get("content-type") || "";
   const ext = extFromContentType(contentType);
   const buf = Buffer.from(await res.arrayBuffer());
   const filename = `${baseName}.${ext}`;
   fs.mkdirSync(IMG_DIR, { recursive: true });
   fs.writeFileSync(path.join(IMG_DIR, filename), buf);
+  console.log(`Saved ${filename} (${(buf.length / 1024).toFixed(0)} KB)`);
   return `/img/${filename}`;
 }
 
 async function fetchApod() {
+  const url = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY === "DEMO_KEY" ? "DEMO_KEY" : "***"}`;
+  console.log(`Fetching APOD from ${url} ...`);
   const res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`);
-  if (!res.ok) throw new Error(`APOD API returned ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`APOD API returned HTTP ${res.status}: ${body.slice(0, 300)}`);
+  }
   const data = await res.json();
-  if (data.media_type !== "image") throw new Error("APOD today is a video, not an image — skipping");
+  if (data.media_type !== "image") throw new Error(`APOD today is a ${data.media_type}, not an image — skipping`);
+  console.log(`APOD found: "${data.title}"`);
   const localUrl = await downloadImage(data.url, "apod");
   return {
     tag: "APOD",
@@ -95,6 +103,7 @@ async function fetchEarthImage() {
     HEIGHT: "450",
   });
   const url = `https://wvs.earthdata.nasa.gov/api/v1/snapshot?${params.toString()}`;
+  console.log(`Fetching Earth snapshot for ${dateStr} from ${url} ...`);
 
   const res = await fetch(url);
   const contentType = res.headers.get("content-type") || "";
@@ -102,10 +111,12 @@ async function fetchEarthImage() {
     const bodyPreview = contentType.includes("image") ? "(binary)" : (await res.text()).slice(0, 300);
     throw new Error(`Worldview Snapshots returned HTTP ${res.status}, content-type ${contentType}: ${bodyPreview}`);
   }
+  console.log(`Earth snapshot OK (content-type ${contentType})`);
 
   const buf = Buffer.from(await res.arrayBuffer());
   fs.mkdirSync(IMG_DIR, { recursive: true });
   fs.writeFileSync(path.join(IMG_DIR, "earth.jpg"), buf);
+  console.log(`Saved earth.jpg (${(buf.length / 1024).toFixed(0)} KB)`);
 
   return {
     tag: "EARTH",
@@ -137,8 +148,10 @@ async function fetchLatestRoverPhoto() {
   // mars-photos API this used to call has been archived). If that fails
   // for both rovers, fall back to a third-party wrapper as a last resort.
   for (const src of MARS_SOURCES) {
+    const url = marsFeedUrl(src.category);
+    console.log(`Trying ${src.rover} via official NASA feed: ${url}`);
     try {
-      const res = await fetch(marsFeedUrl(src.category));
+      const res = await fetch(url);
       const raw = await res.text();
       let data;
       try {
@@ -164,6 +177,7 @@ async function fetchLatestRoverPhoto() {
         continue;
       }
 
+      console.log(`${src.rover}: found image, sol ${img.sol ?? "?"}`);
       const localUrl = await downloadImage(imgUrl, "mars-latest");
       const cameraName =
         (img.camera && (img.camera.instrument || img.camera.camera_model_name)) || img.instrument || "rover camera";
@@ -184,10 +198,12 @@ async function fetchLatestRoverPhoto() {
   // guarantee either, but it's an independent source from the official
   // feed above, so worth trying before giving up entirely).
   for (const rover of ["perseverance", "curiosity"]) {
+    const url = `https://rovers.nebulum.one/api/v1/rovers/${rover}/latest_photos`;
+    console.log(`Trying ${rover} via nebulum.one fallback: ${url}`);
     try {
-      const res = await fetch(`https://rovers.nebulum.one/api/v1/rovers/${rover}/latest_photos`);
+      const res = await fetch(url);
       if (!res.ok) {
-        console.warn(`nebulum.one (${rover}) returned ${res.status}`);
+        console.warn(`nebulum.one (${rover}) returned HTTP ${res.status}`);
         continue;
       }
       const data = await res.json();
@@ -196,6 +212,7 @@ async function fetchLatestRoverPhoto() {
         console.warn(`nebulum.one (${rover}): no photos in response`);
         continue;
       }
+      console.log(`nebulum.one (${rover}): found image, sol ${photo.sol}`);
       const localUrl = await downloadImage(photo.img_src, "mars-latest");
       return {
         tag: `MARS · SOL ${photo.sol}`,
@@ -208,10 +225,11 @@ async function fetchLatestRoverPhoto() {
     }
   }
 
-  throw new Error("All Mars image sources failed (official feed x2 + nebulum.one x2)");
+  throw new Error("All Mars image sources failed (official feed x2 + nebulum.one x2) — see warnings above for each attempt's reason");
 }
 
 async function main() {
+  console.log("Starting imagery fetch: APOD, Earth (GIBS/Worldview), Mars rover photo...");
   const existing = fs.existsSync(OUT_PATH) ? JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) : [];
   const findExisting = (tagPrefix) => existing.find((e) => e.tag.startsWith(tagPrefix));
 
@@ -230,7 +248,12 @@ async function main() {
     } else {
       console.warn(`FAILED — ${label}: ${result.reason.message}`);
       const prev = findExisting(tagPrefix);
-      if (prev) ordered.push(prev); // keep last known good for just this slot
+      if (prev) {
+        console.log(`${label}: keeping last known good entry from previous run`);
+        ordered.push(prev);
+      } else {
+        console.log(`${label}: no previous entry to fall back on, this slot will show a placeholder`);
+      }
     }
   });
 

@@ -67,14 +67,16 @@ function parseRangeAndRate(resultText) {
 }
 
 async function fetchOne(target) {
-  const res = await fetch(horizonsUrl(target.horizonsId));
+  const url = horizonsUrl(target.horizonsId);
+  console.log(`Fetching ${target.name} (Horizons ID ${target.horizonsId})...`);
+  const res = await fetch(url);
   const raw = await res.text();
 
   let data;
   try {
     data = JSON.parse(raw);
   } catch {
-    throw new Error(`${target.name}: non-JSON response (HTTP ${res.status}): ${raw.slice(0, 200)}`);
+    throw new Error(`${target.name}: non-JSON response (HTTP ${res.status}) from ${url} — first 200 chars: ${raw.slice(0, 200)}`);
   }
 
   if (!res.ok) {
@@ -93,6 +95,8 @@ async function fetchOne(target) {
   const hours = Math.floor(lightSeconds / 3600);
   const mins = Math.round((lightSeconds % 3600) / 60);
 
+  console.log(`${target.name}: ${parsed.rangeAu.toFixed(2)} AU, ${Math.abs(parsed.rangeRateKms).toFixed(1)} km/s`);
+
   return {
     name: target.name,
     distanceAu: Math.round(parsed.rangeAu * 10) / 10,
@@ -106,6 +110,7 @@ function sleep(ms) {
 }
 
 async function main() {
+  console.log(`Updating ${TARGETS.length} spacecraft sequentially (1.5s gap between requests, JPL doesn't allow concurrent calls)...`);
   const existing = JSON.parse(fs.readFileSync(OUT_PATH, "utf8"));
 
   // Sequential, not concurrent — JPL's API doesn't allow simultaneous requests

@@ -38,6 +38,7 @@ function parseRssItems(xml) {
 }
 
 async function main() {
+  console.log(`Fetching JPL news feed from ${FEED_URL} ...`);
   const res = await fetch(FEED_URL, {
     headers: {
       "User-Agent": "Mozilla/5.0 (compatible; deep-space-dashboard/1.0; +https://gitlab.ponder.net)",
@@ -46,10 +47,11 @@ async function main() {
   });
   const raw = await res.text();
   if (!res.ok) {
-    throw new Error(`JPL feed returned ${res.status}. First 300 chars of body: ${raw.slice(0, 300)}`);
+    throw new Error(`JPL feed returned HTTP ${res.status}. First 300 chars of body: ${raw.slice(0, 300)}`);
   }
   const items = parseRssItems(raw);
   if (items.length === 0) throw new Error(`Parsed zero items from JPL feed. First 300 chars: ${raw.slice(0, 300)}`);
+  console.log(`Feed OK, ${items.length} items found. Matching against ${Object.keys(KEYWORDS).length} tracked spacecraft...`);
 
   const spacecraft = JSON.parse(fs.readFileSync(SC_PATH, "utf8"));
 
@@ -60,12 +62,16 @@ async function main() {
       .slice(0, MAX_NEWS_PER_CRAFT)
       .map((item) => ({ date: item.date, headline: item.title }));
 
-    if (matches.length === 0) return entry; // keep existing news if nothing matched
+    if (matches.length === 0) {
+      console.log(`${entry.name}: no matching headlines this run, kept existing news`);
+      return entry;
+    }
+    console.log(`${entry.name}: ${matches.length} matching headline(s) found`);
     return { ...entry, news: matches };
   });
 
   fs.writeFileSync(SC_PATH, JSON.stringify(updated, null, 2));
-  console.log(`Checked JPL feed, updated news for spacecraft where matches were found.`);
+  console.log(`Wrote updated news to ${SC_PATH}`);
 }
 
 main().catch((err) => {

@@ -20,18 +20,25 @@ const MANUAL_EVENTS = [
 async function fetchAsteroidCloseApproaches() {
   // JPL's Close Approach Data API — no key required.
   // Docs: https://ssd-api.jpl.nasa.gov/doc/cad.html
-  try {
-    const pad = (n) => String(n).padStart(2, "0");
-    const fmt = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
-    const today = new Date();
-    const in30Days = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+  const pad = (n) => String(n).padStart(2, "0");
+  const fmt = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+  const today = new Date();
+  const in30Days = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+  const url = `https://ssd-api.jpl.nasa.gov/cad.api?date-min=${fmt(today)}&date-max=${fmt(in30Days)}&dist-max=0.05&sort=date`;
 
-    const res = await fetch(
-      `https://ssd-api.jpl.nasa.gov/cad.api?date-min=${fmt(today)}&date-max=${fmt(in30Days)}&dist-max=0.05&sort=date`
-    );
-    if (!res.ok) return [];
+  console.log(`Fetching asteroid close-approach data from ${url} ...`);
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      console.warn(`CAD API returned HTTP ${res.status}, skipping live asteroid events this run`);
+      return [];
+    }
     const data = await res.json();
-    if (!data.data) return [];
+    if (!data.data) {
+      console.warn(`CAD API response had no "data" field. Keys: ${Object.keys(data).join(", ")}`);
+      return [];
+    }
+    console.log(`CAD API returned ${data.data.length} close approaches, using top 3`);
     return data.data.slice(0, 3).map((row) => {
       // fields per data.fields: des, orbit_id, jd, cd (calendar date), dist, ...
       const fields = data.fields;
@@ -44,7 +51,8 @@ async function fetchAsteroidCloseApproaches() {
         label: `Asteroid ${rec.des} close approach, ${parseFloat(rec.dist).toFixed(2)} AU`,
       };
     });
-  } catch {
+  } catch (err) {
+    console.warn(`CAD API fetch threw: ${err.message}, skipping live asteroid events this run`);
     return [];
   }
 }
@@ -57,7 +65,7 @@ async function main() {
     .slice(0, 6);
 
   fs.writeFileSync(OUT_PATH, JSON.stringify(merged, null, 2));
-  console.log(`Wrote ${merged.length} events to ${OUT_PATH}`);
+  console.log(`Wrote ${merged.length} events to ${OUT_PATH} (${manualNonAsteroid.length} manual + ${live.length} live asteroid entries)`);
 }
 
 main().catch((err) => {
