@@ -15,8 +15,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "14.2 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -24,6 +24,17 @@
     "site": "Goldstone",
     "diameter": "34m",
     "target": "MRO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "1.5 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "TGO",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -40,25 +51,14 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-63",
-    "site": "Madrid",
-    "diameter": "70m",
-    "target": "JNO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "100.0 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-56",
     "site": "Madrid",
     "diameter": "34m",
     "target": "LRO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "146.4 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -68,8 +68,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "8.5 Mbps",
     "rtlt": null
   },
   {
@@ -92,6 +92,17 @@
     "status": "active",
     "signalType": null,
     "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-63",
+    "site": "Madrid",
+    "diameter": "70m",
+    "target": "VGR1",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "160 bps",
     "rtlt": null
   },
   {
