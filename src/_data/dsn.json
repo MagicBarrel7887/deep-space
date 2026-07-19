@@ -24,8 +24,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "14.2 kbps",
     "rtlt": null
   },
   {
@@ -35,8 +35,8 @@
     "target": "CHDR",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.2 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -56,28 +56,6 @@
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
-  },
-  {
-    "id": "DSS-54",
-    "site": "Madrid",
-    "diameter": "34m",
-    "target": "MSL",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
-    "id": "DSS-65",
-    "site": "Madrid",
-    "diameter": "34m",
-    "target": "ACE",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "87.7 kbps",
-    "rtlt": null
   },
   {
     "id": "DSS-56",
@@ -102,14 +80,14 @@
     "rtlt": null
   },
   {
-    "id": "DSS-34",
-    "site": "Canberra",
+    "id": "DSS-65",
+    "site": "Madrid",
     "diameter": "34m",
-    "target": "LRO",
+    "target": "WIND",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "146.4 kbps",
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -119,8 +97,8 @@
     "target": "VGR1",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "160 bps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -130,8 +108,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "8.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -142,5 +120,16 @@
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
+  },
+  {
+    "id": "DSS-34",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "JWST",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
   }
 ]
