@@ -123,7 +123,7 @@ async function main() {
     } catch (err) {
       updates.push({ status: "rejected", reason: err });
     }
-    await sleep(1500);
+    await sleep(5000); // 5s gap between requests to avoid 503s
   }
 
   updates.forEach((u, i) => {
