@@ -64,10 +64,19 @@ async function downloadImage(url, baseName) {
   return `/img/${filename}`;
 }
 
-async function fetchApod() {
-  const url = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY === "DEMO_KEY" ? "DEMO_KEY" : "***"}`;
-  console.log(`Fetching APOD from ${url} ...`);
-  const res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`);
+async function fetchApod(attempt = 1) {
+  console.log(`Fetching APOD, attempt ${attempt}...`);
+  let res;
+  try {
+    res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`);
+  } catch (err) {
+    if (attempt < 2) {
+      console.warn(`APOD: network error on attempt ${attempt} (${err.message}), retrying in 3s...`);
+      await new Promise((r) => setTimeout(r, 3000));
+      return fetchApod(attempt + 1);
+    }
+    throw new Error(`APOD: network error after ${attempt} attempts — ${err.message}`);
+  }
   if (!res.ok) {
     const body = await res.text();
     throw new Error(`APOD API returned HTTP ${res.status}: ${body.slice(0, 300)}`);

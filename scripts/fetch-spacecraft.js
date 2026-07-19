@@ -66,10 +66,24 @@ function parseRangeAndRate(resultText) {
   return { rangeAu, rangeRateKms };
 }
 
-async function fetchOne(target) {
+async function fetchOne(target, attempt = 1) {
   const url = horizonsUrl(target.horizonsId);
-  console.log(`Fetching ${target.name} (Horizons ID ${target.horizonsId})...`);
-  const res = await fetch(url);
+  console.log(`Fetching ${target.name} (Horizons ID ${target.horizonsId}), attempt ${attempt}...`);
+
+  let res;
+  try {
+    res = await fetch(url);
+  } catch (err) {
+    // Network-level failure (DNS, connection reset, timeout) — often transient,
+    // worth one retry before giving up.
+    if (attempt < 2) {
+      console.warn(`${target.name}: network error on attempt ${attempt} (${err.message}), retrying in 3s...`);
+      await sleep(3000);
+      return fetchOne(target, attempt + 1);
+    }
+    throw new Error(`${target.name}: network error after ${attempt} attempts — ${err.message}`);
+  }
+
   const raw = await res.text();
 
   let data;
@@ -123,7 +137,7 @@ async function main() {
     } catch (err) {
       updates.push({ status: "rejected", reason: err });
     }
-    await sleep(5000); // 5s gap between requests to avoid 503s
+    await sleep(1500);
   }
 
   updates.forEach((u, i) => {
