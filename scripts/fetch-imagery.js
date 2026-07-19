@@ -36,7 +36,7 @@ const STATIC_EXTRAS = [
 //   https://www.stsci.edu/jwst/science-execution/program-information (browse
 //   by program) or simpler: https://webbtelescope.org/news/latest-news —
 //   pick an image, download the "Full Res" or a reasonably sized JPG, save
-//   as src/img/jwst-latest.jpg, add "url": "/img/jwst-latest.jpg" above.
+//   as src/img/jwst-latest.jpg, add "url": "img/jwst-latest.jpg" above.
 //   JWST doesn't release images on a predictable schedule, so this one is
 //   realistically a manual swap-in every so often rather than something to
 //   automate — update the "title"/"caption" text above to match whatever
@@ -61,7 +61,7 @@ async function downloadImage(url, baseName) {
   fs.mkdirSync(IMG_DIR, { recursive: true });
   fs.writeFileSync(path.join(IMG_DIR, filename), buf);
   console.log(`Saved ${filename} (${(buf.length / 1024).toFixed(0)} KB)`);
-  return `/img/${filename}`;
+  return `img/${filename}`;
 }
 
 async function fetchApod(attempt = 1) {
@@ -131,7 +131,7 @@ async function fetchEarthImage() {
     tag: "EARTH",
     title: "Full Globe — VIIRS True Color",
     caption: `NASA GIBS/Worldview, ${dateStr}`,
-    url: "/img/earth.jpg",
+    url: "img/earth.jpg",
   };
 }
 
@@ -239,7 +239,12 @@ async function fetchLatestRoverPhoto() {
 
 async function main() {
   console.log("Starting imagery fetch: APOD, Earth (GIBS/Worldview), Mars rover photo...");
-  const existing = fs.existsSync(OUT_PATH) ? JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) : [];
+  const rawExisting = fs.existsSync(OUT_PATH) ? JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) : [];
+  // Fix up any old absolute "/img/..." paths from before this was switched to
+  // relative paths (GitHub/GitLab Pages project sites live under a subfolder,
+  // so an absolute path 404s) — otherwise falling back to a previous entry
+  // could silently reintroduce the broken path.
+  const existing = rawExisting.map((e) => (e.url && e.url.startsWith("/img/") ? { ...e, url: e.url.slice(1) } : e));
   const findExisting = (tagPrefix) => existing.find((e) => e.tag.startsWith(tagPrefix));
 
   const [apod, earth, mars] = await Promise.allSettled([fetchApod(), fetchEarthImage(), fetchLatestRoverPhoto()]);
