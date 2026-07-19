@@ -128,7 +128,7 @@
     "target": "ESCG",
     "band": "—",
     "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   }
