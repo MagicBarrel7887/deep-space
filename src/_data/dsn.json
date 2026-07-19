@@ -97,8 +97,8 @@
     "target": "LRO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "146.4 kbps",
     "rtlt": null
   },
   {
