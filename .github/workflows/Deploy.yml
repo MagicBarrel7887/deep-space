@@ -1,0 +1,69 @@
+name: Deep Space Dashboard
+
+on:
+  schedule:
+    - cron: "0 * * * *" # roughly hourly — GitHub's scheduler is best-effort, not exact-minute
+  push:
+    branches: [main]
+  workflow_dispatch: {} # adds a manual "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write # needed so this workflow can commit fetched data back
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Fetch live data
+        run: npm run fetch:all
+        env:
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+
+      - name: Commit updated data back to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/_data src/img
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update live data [skip ci]"
+            git push
+          else
+            echo "No data changes to commit"
+          fi
+
+      - name: Build site
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
