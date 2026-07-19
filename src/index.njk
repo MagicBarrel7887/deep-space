@@ -5,10 +5,15 @@ title: Deep Space // Signal
 <header class="hdr">
   <div>
     <h1>DEEP SPACE // SIGNAL</h1>
-    <p class="sub">LIVE TELEMETRY</p>
+    <p class="sub">
+      <span id="live-dot" class="live-dot"></span>
+      <span id="live-text">LIVE</span>
+      <span id="live-age" class="live-age"></span>
+    </p>
   </div>
   <div class="clock-wrap">
     <div class="clock" id="clock">--:--:--</div>
+    <div class="clock-local" id="clock-local"></div>
     <div class="sub">GROUND STATION FEED</div>
   </div>
 </header>
@@ -143,3 +148,4 @@ title: Deep Space // Signal
 <script type="application/json" id="data-dsn">{{ dsn | dump | safe }}</script>
 <script type="application/json" id="data-mars">{{ marsAssets | dump | safe }}</script>
 <script type="application/json" id="data-moon">{{ moonAssets | dump | safe }}</script>
+<script type="application/json" id="data-meta">{{ meta | dump | safe }}</script>

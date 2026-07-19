@@ -11,7 +11,8 @@
     "fetch:events": "node scripts/fetch-events.js",
     "fetch:imagery": "node scripts/fetch-imagery.js",
     "fetch:news": "node scripts/fetch-news.js",
-    "fetch:all": "npm run fetch:dsn && npm run fetch:spacecraft && npm run fetch:iss && npm run fetch:events && npm run fetch:imagery && npm run fetch:news"
+    "fetch:meta": "node scripts/fetch-meta.js",
+    "fetch:all": "npm run fetch:dsn && npm run fetch:spacecraft && npm run fetch:iss && npm run fetch:events && npm run fetch:imagery && npm run fetch:news && npm run fetch:meta"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"

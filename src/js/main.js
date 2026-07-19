@@ -1,12 +1,70 @@
 // ---- clock ----
 function tickClock() {
-  const el = document.getElementById("clock");
-  if (!el) return;
+  const utcEl = document.getElementById("clock");
+  const localEl = document.getElementById("clock-local");
   const now = new Date();
-  el.textContent = now.toUTCString().split(" ")[4] + " UTC";
+  if (utcEl) utcEl.textContent = now.toUTCString().split(" ")[4] + " UTC";
+  if (localEl) {
+    localEl.textContent = now.toLocaleTimeString(undefined, {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "short",
+    });
+  }
 }
 setInterval(tickClock, 1000);
 tickClock();
+
+// ---- live/fresh/stale indicator ----
+// Assumes roughly-hourly fetch runs (adjust the two thresholds below if your
+// CI schedule changes): fresh right after an update, normal for the rest of
+// the expected window, stale once a run appears to have been missed.
+const LIVE_FRESH_MS = 3 * 60 * 1000; // first 3 min after an update: heartbeat
+const LIVE_STALE_MS = 90 * 60 * 1000; // past 90 min since update: flag as stale
+
+function formatAge(ms) {
+  const mins = Math.floor(ms / 60000);
+  if (mins < 60) return `${mins}m`;
+  const hours = Math.floor(mins / 60);
+  const rem = mins % 60;
+  return `${hours}h ${rem}m`;
+}
+
+function tickLiveIndicator() {
+  const dot = document.getElementById("live-dot");
+  const text = document.getElementById("live-text");
+  const ageEl = document.getElementById("live-age");
+  if (!dot || !text) return;
+
+  const meta = readData("data-meta");
+  const lastUpdated = meta && meta.lastUpdated ? new Date(meta.lastUpdated) : null;
+  const wrapper = dot.closest(".sub") || dot.parentElement;
+
+  if (!lastUpdated || isNaN(lastUpdated.getTime())) {
+    wrapper.className = "sub live-stale";
+    text.textContent = "NO DATA";
+    if (ageEl) ageEl.textContent = "";
+    return;
+  }
+
+  const age = Date.now() - lastUpdated.getTime();
+  if (age < LIVE_FRESH_MS) {
+    wrapper.className = "sub live-fresh";
+    text.textContent = "LIVE";
+    if (ageEl) ageEl.textContent = "";
+  } else if (age < LIVE_STALE_MS) {
+    wrapper.className = "sub live-normal";
+    text.textContent = "LIVE";
+    if (ageEl) ageEl.textContent = "";
+  } else {
+    wrapper.className = "sub live-stale";
+    text.textContent = "DATA STALE";
+    if (ageEl) ageEl.textContent = `— last update ${formatAge(age)} ago`;
+  }
+}
+setInterval(tickLiveIndicator, 10000);
+// runs after readData() is defined below, so call it once that's set up
+setTimeout(tickLiveIndicator, 0);
 
 // ---- starfield (static dots, seeded, no per-frame work — the container itself rotates via CSS) ----
 function buildStarfield() {
@@ -100,6 +158,7 @@ function renderMap(body, data) {
 // ---- Earth view: real Leaflet map with actual geography, not the stylized grid above ----
 let leafletMap = null;
 let leafletMarkers = [];
+let lastFitPoints = [];
 
 function initLeafletMap() {
   if (leafletMap || typeof L === "undefined") return;
@@ -112,7 +171,7 @@ function initLeafletMap() {
     boxZoom: false,
     keyboard: false,
     tap: false,
-  }).setView([15, 20], 2);
+  }).setView([15, 20], 1); // temporary — drawLeafletMarkers() below fits real bounds once markers exist
 
   // CartoDB's free dark basemap — no API key required, matches the dashboard's palette
   L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
@@ -126,6 +185,7 @@ function drawLeafletMarkers(data) {
   if (!leafletMap) return;
   leafletMarkers.forEach((m) => leafletMap.removeLayer(m));
   leafletMarkers = [];
+  const points = []; // for fitBounds
 
   data.sites.forEach((s) => {
     const dishesHere = data.dsn.filter((d) => d.site === s.name);
@@ -146,6 +206,7 @@ function drawLeafletMarkers(data) {
       })
       .addTo(leafletMap);
     leafletMarkers.push(marker);
+    points.push([s.lat, s.lon]);
   });
 
   if (data.iss && typeof data.iss.lat === "number") {
@@ -159,6 +220,15 @@ function drawLeafletMarkers(data) {
       .bindTooltip("ISS", { permanent: true, direction: "right", offset: [8, 0], className: "map-tooltip" })
       .addTo(leafletMap);
     leafletMarkers.push(issMarker);
+    points.push([data.iss.lat, data.iss.lon]);
+  }
+
+  // Fixed zoom/center previously cut off sites spread far apart in longitude
+  // (Goldstone/Madrid/Canberra span nearly the whole globe) — fit to whatever
+  // points actually exist instead of guessing a center/zoom that works for all cases.
+  if (points.length > 0) {
+    lastFitPoints = points;
+    leafletMap.fitBounds(points, { padding: [30, 30], maxZoom: 3 });
   }
 }
 
@@ -194,8 +264,15 @@ function initMapRotator() {
       initLeafletMap();
       drawLeafletMarkers(data);
       // container was hidden (display:none) when Leaflet first measured it —
-      // force a re-check of its size now that it's visible, or tiles render wrong
-      setTimeout(() => leafletMap && leafletMap.invalidateSize(), 50);
+      // force a re-check of its size now that it's visible, then re-fit bounds
+      // using the corrected size, or the very first render can be mis-zoomed
+      setTimeout(() => {
+        if (!leafletMap) return;
+        leafletMap.invalidateSize();
+        if (lastFitPoints.length > 0) {
+          leafletMap.fitBounds(lastFitPoints, { padding: [30, 30], maxZoom: 3 });
+        }
+      }, 50);
       if (orbitEl) orbitEl.textContent = "";
     } else {
       leafletEl.classList.remove("visible");
@@ -215,11 +292,17 @@ function initMapRotator() {
   setInterval(() => {
     mapEl.style.opacity = 0;
     leafletEl.style.opacity = 0;
+    mapEl.classList.add("transitioning");
+    leafletEl.classList.add("transitioning");
     setTimeout(() => {
       index = (index + 1) % views.length;
       draw();
       mapEl.style.opacity = 1;
       leafletEl.style.opacity = 1;
+      setTimeout(() => {
+        mapEl.classList.remove("transitioning");
+        leafletEl.classList.remove("transitioning");
+      }, 400);
     }, 600);
   }, 120000);
 }
