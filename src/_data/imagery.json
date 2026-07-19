@@ -3,19 +3,19 @@
     "tag": "APOD",
     "title": "Flying Saucer Crash Lands in Utah Desert",
     "caption": "A flying saucer from outer space crash-landed in the Utah desert after being tracked by radar and chased by helicopters.",
-    "url": "/img/apod.jpg"
+    "url": "img/apod.jpg"
   },
   {
     "tag": "EARTH",
     "title": "Full Globe — VIIRS True Color",
     "caption": "NASA GIBS/Worldview, 2026-07-18",
-    "url": "/img/earth.jpg"
+    "url": "img/earth.jpg"
   },
   {
     "tag": "MARS · SOL 1923",
     "title": "Perseverance — NAVCAM_LEFT",
     "caption": "Jezero Crater, Sol-01923M11:00:42.041",
-    "url": "/img/mars-latest.jpg"
+    "url": "img/mars-latest.jpg"
   },
   {
     "tag": "JUPITER",
