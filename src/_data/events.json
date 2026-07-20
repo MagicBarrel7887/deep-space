@@ -12,15 +12,15 @@
     "label": "New Horizons KBO candidate observation window"
   },
   {
-    "date": "Jul 19",
-    "label": "Asteroid 2025 MB90 close approach, 0.01 AU"
-  },
-  {
-    "date": "Jul 19",
-    "label": "Asteroid 2026 NQ1 close approach, 0.04 AU"
+    "date": "Jul 21",
+    "label": "Asteroid 2026 NB1 close approach, 0.05 AU"
   },
   {
     "date": "Jul 21",
-    "label": "Asteroid 2026 NB1 close approach, 0.05 AU"
+    "label": "Asteroid 2020 OM close approach, 0.02 AU"
+  },
+  {
+    "date": "Jul 24",
+    "label": "Asteroid 2026 KU3 close approach, 0.02 AU"
   }
 ]
