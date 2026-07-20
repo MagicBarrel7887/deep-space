@@ -15,7 +15,7 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
+    "signalType": null,
     "dataRate": null,
     "rtlt": null
   },
@@ -32,11 +32,11 @@
     "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
-    "target": "M01O",
+    "target": "SOHO",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "14.2 kbps",
+    "dataRate": "245.8 kbps",
     "rtlt": null
   },
   {
@@ -47,17 +47,6 @@
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
-  },
-  {
-    "id": "DSS-53",
-    "site": "Unknown",
-    "diameter": "?",
-    "target": "LUCY",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "20.0 kbps",
-    "rtlt": null
   },
   {
     "id": "DSS-63",
@@ -98,18 +87,18 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": null,
+    "dataRate": "40.0 kbps",
     "rtlt": null
   },
   {
-    "id": "DSS-34",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "MRO",
+    "id": "DSS-53",
+    "site": "Unknown",
+    "diameter": "?",
+    "target": "CHDR",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "1.5 Mbps",
+    "dataRate": "1.2 Mbps",
     "rtlt": null
   },
   {
@@ -120,7 +109,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "119.6 kbps",
+    "dataRate": "358.7 kbps",
     "rtlt": null
   },
   {
@@ -135,14 +124,21 @@
     "rtlt": null
   },
   {
+    "id": "DSS-34",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
+  },
+  {
     "id": "DSS-43",
     "site": "Canberra",
     "diameter": "70m",
-    "target": "MMS1",
+    "target": "—",
     "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "1.3 Mbps",
-    "rtlt": null
+    "status": "idle",
+    "note": "no active target in feed right now"
   }
 ]
