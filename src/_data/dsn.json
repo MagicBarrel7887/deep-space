@@ -42,17 +42,6 @@
     "rtlt": null
   },
   {
-    "id": "DSS-63",
-    "site": "Madrid",
-    "diameter": "70m",
-    "target": "NHPC",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-55",
     "site": "Madrid",
     "diameter": "34m",
@@ -60,28 +49,6 @@
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
-  },
-  {
-    "id": "DSS-54",
-    "site": "Madrid",
-    "diameter": "34m",
-    "target": "ESCG",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "8.0 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-56",
-    "site": "Madrid",
-    "diameter": "34m",
-    "target": "STA",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "480.0 kbps",
-    "rtlt": null
   },
   {
     "id": "DSS-65",
@@ -106,15 +73,35 @@
     "rtlt": null
   },
   {
-    "id": "DSS-43",
-    "site": "Canberra",
+    "id": "DSS-63",
+    "site": "Madrid",
     "diameter": "70m",
-    "target": "WIND",
+    "target": "GBRA",
     "band": "—",
     "status": "active",
     "signalType": null,
     "dataRate": null,
     "rtlt": null
+  },
+  {
+    "id": "DSS-56",
+    "site": "Madrid",
+    "diameter": "34m",
+    "target": "TGO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "416.7 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-54",
+    "site": "Madrid",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-34",
@@ -124,7 +111,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "4.0 kbps",
+    "dataRate": "1.0 Mbps",
     "rtlt": null
   },
   {
@@ -134,8 +121,30 @@
     "target": "LUCY",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "20.0 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "SOHO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "245.8 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-43",
+    "site": "Canberra",
+    "diameter": "70m",
+    "target": "VGR2",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "160 bps",
     "rtlt": null
   }
 ]
