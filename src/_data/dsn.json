@@ -1,25 +1,5 @@
 [
   {
-    "id": "DSS-14",
-    "site": "Goldstone",
-    "diameter": "70m",
-    "target": "—",
-    "band": "—",
-    "status": "idle",
-    "note": "no active target in feed right now"
-  },
-  {
-    "id": "DSS-25",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "IMAP",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "714.3 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-26",
     "site": "Goldstone",
     "diameter": "34m",
@@ -37,14 +17,25 @@
     "target": "ACE",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "87.7 kbps",
     "rtlt": null
   },
   {
-    "id": "DSS-55",
-    "site": "Madrid",
+    "id": "DSS-25",
+    "site": "Goldstone",
     "diameter": "34m",
+    "target": "JNO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "18.1 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-14",
+    "site": "Goldstone",
+    "diameter": "70m",
     "target": "—",
     "band": "—",
     "status": "idle",
@@ -73,15 +64,13 @@
     "rtlt": null
   },
   {
-    "id": "DSS-35",
-    "site": "Canberra",
+    "id": "DSS-55",
+    "site": "Madrid",
     "diameter": "34m",
-    "target": "ESCG",
+    "target": "—",
     "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-34",
@@ -111,7 +100,16 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": null,
+    "dataRate": "6.4 kbps",
     "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
   }
 ]
