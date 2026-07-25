@@ -24,8 +24,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "39.8 kbps",
     "rtlt": null
   },
   {
@@ -35,8 +35,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "39.8 kbps",
     "rtlt": null
   },
   {
@@ -49,21 +49,10 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-63",
+    "id": "DSS-65",
     "site": "Madrid",
-    "diameter": "70m",
-    "target": "GBRA",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
-    "id": "DSS-53",
-    "site": "Unknown",
-    "diameter": "?",
-    "target": "IMAP",
+    "diameter": "34m",
+    "target": "JNO",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -74,7 +63,7 @@
     "id": "DSS-56",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "CHDR",
+    "target": "ACE",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -82,10 +71,32 @@
     "rtlt": null
   },
   {
-    "id": "DSS-65",
+    "id": "DSS-54",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "JNO",
+    "target": "SOHO",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-63",
+    "site": "Madrid",
+    "diameter": "70m",
+    "target": "DSSR",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-53",
+    "site": "Unknown",
+    "diameter": "?",
+    "target": "WIND",
     "band": "—",
     "status": "active",
     "signalType": null,
