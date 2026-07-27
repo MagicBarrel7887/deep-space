@@ -18,15 +18,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-26",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "—",
-    "band": "—",
-    "status": "idle",
-    "note": "no active target in feed right now"
-  },
-  {
     "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
@@ -58,10 +49,41 @@
     "note": "no active target in feed right now"
   },
   {
+    "id": "DSS-53",
+    "site": "Unknown",
+    "diameter": "?",
+    "target": "JWST",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
     "target": "ACE",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "87.7 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-43",
+    "site": "Canberra",
+    "diameter": "70m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "SOHO",
     "band": "—",
     "status": "active",
     "signalType": null,
