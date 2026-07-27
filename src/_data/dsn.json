@@ -56,5 +56,16 @@
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
+  },
+  {
+    "id": "DSS-34",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "ACE",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
   }
 ]
