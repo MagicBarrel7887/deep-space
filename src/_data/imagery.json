@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "Tranquility and Serenity",
-    "caption": "The Seas of Tranquility and Serenity are calm today.",
+    "title": "NGC 7635: The Bubble Nebula",
+    "caption": "What created this huge space bubble? Blown by the wind from a star, this tantalizing, head-like apparition is cataloged as NGC 7635, but known simply as the Bubble Nebula.",
     "url": "img/apod.jpg"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 1931",
-    "title": "Perseverance — Mast Camera Zoom - Right",
-    "caption": "Jezero Crater, 2026-07-26",
+    "title": "Perseverance — MCZ_RIGHT",
+    "caption": "Jezero Crater, Sol-01931M12:48:50.765",
     "url": "img/mars-latest.jpg"
   },
   {
