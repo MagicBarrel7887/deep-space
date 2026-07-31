@@ -78,10 +78,10 @@
     "rtlt": null
   },
   {
-    "id": "DSS-35",
+    "id": "DSS-36",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "MRO",
+    "target": "M01O",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -89,14 +89,14 @@
     "rtlt": null
   },
   {
-    "id": "DSS-36",
+    "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "M01O",
+    "target": "STA",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "28.4 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   }
 ]
