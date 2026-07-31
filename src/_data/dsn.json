@@ -15,8 +15,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "14.2 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -46,8 +46,8 @@
     "target": "STA",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "480.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -63,44 +63,44 @@
     "id": "DSS-43",
     "site": "Canberra",
     "diameter": "70m",
-    "target": "NHPC",
+    "target": "VGR2",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "KPLO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "8.5 Mbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-36",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "JWST",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "40.0 kbps",
+    "dataRate": "160 bps",
     "rtlt": null
   },
   {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "LRO",
+    "target": "PSYC",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "146.4 kbps",
+    "dataRate": "358.7 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "MRO",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "M01O",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   }
 ]
