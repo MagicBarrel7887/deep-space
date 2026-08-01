@@ -68,8 +68,8 @@
     "target": "EURC",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "2.0 kbps",
     "rtlt": null
   },
   {
@@ -79,8 +79,8 @@
     "target": "ORX",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "916.6 kbps",
     "rtlt": null
   }
 ]
