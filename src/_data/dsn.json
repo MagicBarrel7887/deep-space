@@ -9,17 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-26",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "M01O",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "28.4 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
@@ -28,17 +17,6 @@
     "status": "active",
     "signalType": "data",
     "dataRate": "358.7 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-23",
-    "site": "Unknown",
-    "diameter": "?",
-    "target": "MEX",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "104.9 kbps",
     "rtlt": null
   },
   {
@@ -51,6 +29,17 @@
     "note": "no active target in feed right now"
   },
   {
+    "id": "DSS-26",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "MRO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "1.5 Mbps",
+    "rtlt": null
+  },
+  {
     "id": "DSS-55",
     "site": "Madrid",
     "diameter": "34m",
@@ -58,17 +47,6 @@
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
-  },
-  {
-    "id": "DSS-36",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "ESCG",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "8.0 kbps",
-    "rtlt": null
   },
   {
     "id": "DSS-43",
@@ -82,10 +60,32 @@
     "rtlt": null
   },
   {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "M01O",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "M01O",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "MMS4",
+    "target": "LRO",
     "band": "—",
     "status": "active",
     "signalType": null,
