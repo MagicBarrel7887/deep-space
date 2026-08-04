@@ -9,7 +9,7 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-25",
+    "id": "DSS-26",
     "site": "Goldstone",
     "diameter": "34m",
     "target": "—",
@@ -21,21 +21,23 @@
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
-    "target": "MMX",
+    "target": "CAPS",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "256.0 kbps",
     "rtlt": null
   },
   {
-    "id": "DSS-26",
+    "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
-    "target": "—",
+    "target": "MMS3",
     "band": "—",
-    "status": "idle",
-    "note": "no active target in feed right now"
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
+    "rtlt": null
   },
   {
     "id": "DSS-55",
@@ -92,15 +94,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-36",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "—",
-    "band": "—",
-    "status": "idle",
-    "note": "no active target in feed right now"
-  },
-  {
     "id": "DSS-43",
     "site": "Canberra",
     "diameter": "70m",
@@ -110,25 +103,30 @@
     "note": "no active target in feed right now"
   },
   {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
+  },
+  {
     "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "EURC",
+    "target": "—",
     "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "2.0 kbps",
-    "rtlt": null
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "SOHO",
+    "target": "—",
     "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "245.8 kbps",
-    "rtlt": null
+    "status": "idle",
+    "note": "no active target in feed right now"
   }
 ]
