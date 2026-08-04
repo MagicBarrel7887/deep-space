@@ -12,15 +12,15 @@
     "label": "New Horizons KBO candidate observation window"
   },
   {
+    "date": "Aug 04",
+    "label": "Asteroid 2026 PA close approach, 0.01 AU"
+  },
+  {
     "date": "Aug 05",
     "label": "Asteroid 2024 RM10 close approach, 0.03 AU"
   },
   {
     "date": "Aug 07",
     "label": "Asteroid 2026 OE1 close approach, 0.02 AU"
-  },
-  {
-    "date": "Aug 09",
-    "label": "Asteroid 173561 close approach, 0.03 AU"
   }
 ]
