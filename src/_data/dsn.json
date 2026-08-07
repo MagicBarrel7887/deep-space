@@ -37,8 +37,8 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "50.0 kbps",
     "rtlt": null
   },
   {
@@ -48,7 +48,7 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   },
@@ -129,25 +129,25 @@
     "rtlt": null
   },
   {
-    "id": "DSS-36",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "CHDR",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "1.2 Mbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "MMS2",
+    "target": "MMS1",
     "band": "—",
     "status": "active",
     "signalType": "data",
     "dataRate": "1.3 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "TESS",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   }
 ]
