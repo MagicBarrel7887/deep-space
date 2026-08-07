@@ -143,11 +143,11 @@
     "id": "DSS-36",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "MMS1",
+    "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "2.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   }
 ]
