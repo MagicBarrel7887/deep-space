@@ -20,25 +20,14 @@
     "rtlt": null
   },
   {
-    "id": "DSS-24",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "KPLO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "8.2 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-25",
     "site": "Goldstone",
     "diameter": "34m",
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "50.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -48,7 +37,18 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-24",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "SOHO",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
     "dataRate": null,
     "rtlt": null
   },
@@ -107,17 +107,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-43",
-    "site": "Canberra",
-    "diameter": "70m",
-    "target": "NHPC",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
@@ -129,21 +118,32 @@
     "rtlt": null
   },
   {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "MMS1",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "1.3 Mbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-36",
     "site": "Canberra",
     "diameter": "34m",
     "target": "TESS",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "16.0 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "ESCB",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-43",
+    "site": "Canberra",
+    "diameter": "70m",
+    "target": "VGR2",
     "band": "—",
     "status": "active",
     "signalType": null,
