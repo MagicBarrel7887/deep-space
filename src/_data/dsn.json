@@ -26,8 +26,8 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "47 bps",
     "rtlt": null
   },
   {
@@ -37,8 +37,8 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "47 bps",
     "rtlt": null
   },
   {
@@ -48,8 +48,8 @@
     "target": "SOHO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "245.8 kbps",
     "rtlt": null
   },
   {
@@ -107,36 +107,14 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-34",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "JWST",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "28.0 Mbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-36",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "TESS",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "16.0 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
     "target": "ESCB",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "8.0 kbps",
     "rtlt": null
   },
   {
@@ -146,8 +124,30 @@
     "target": "VGR2",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "160 bps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-34",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "CAPS",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "256.0 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "MMS1",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
     "rtlt": null
   }
 ]
