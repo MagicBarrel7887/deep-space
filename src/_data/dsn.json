@@ -48,8 +48,8 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "22.0 kbps",
     "rtlt": null
   },
   {
