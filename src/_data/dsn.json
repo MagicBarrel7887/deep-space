@@ -15,8 +15,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "28.4 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -26,8 +26,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "8.2 kbps",
     "rtlt": null
   },
   {
@@ -48,8 +48,8 @@
     "target": "WIND",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "73.5 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
