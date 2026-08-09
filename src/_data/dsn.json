@@ -12,11 +12,11 @@
     "id": "DSS-25",
     "site": "Goldstone",
     "diameter": "34m",
-    "target": "M01O",
+    "target": "MRO",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "14.2 kbps",
+    "dataRate": "1.3 Mbps",
     "rtlt": null
   },
   {
@@ -48,8 +48,8 @@
     "target": "ACE",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "87.7 kbps",
     "rtlt": null
   },
   {
