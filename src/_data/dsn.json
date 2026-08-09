@@ -1,16 +1,5 @@
 [
   {
-    "id": "DSS-25",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "ORX",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-14",
     "site": "Goldstone",
     "diameter": "70m",
@@ -45,7 +34,7 @@
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
-    "target": "MMS1",
+    "target": "MMS2",
     "band": "—",
     "status": "active",
     "signalType": "data",
@@ -132,7 +121,7 @@
     "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "IMAP",
+    "target": "VGR2",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -143,7 +132,7 @@
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "SWFO",
+    "target": "VGR2",
     "band": "—",
     "status": "active",
     "signalType": null,
