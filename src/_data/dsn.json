@@ -6,7 +6,7 @@
     "target": "ORX",
     "band": "—",
     "status": "active",
-    "signalType": "data",
+    "signalType": null,
     "dataRate": null,
     "rtlt": null
   },
@@ -20,17 +20,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-26",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "JWST",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "40.0 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
@@ -40,10 +29,21 @@
     "note": "no active target in feed right now"
   },
   {
+    "id": "DSS-26",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "MMS2",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "1.3 Mbps",
+    "rtlt": null
+  },
+  {
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
-    "target": "MMS3",
+    "target": "ESCG",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -105,15 +105,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-43",
-    "site": "Canberra",
-    "diameter": "70m",
-    "target": "—",
-    "band": "—",
-    "status": "idle",
-    "note": "no active target in feed right now"
-  },
-  {
     "id": "DSS-36",
     "site": "Canberra",
     "diameter": "34m",
@@ -126,22 +117,33 @@
     "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "JNO",
+    "target": "EURC",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "22.0 kbps",
+    "dataRate": "2.0 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-43",
+    "site": "Canberra",
+    "diameter": "70m",
+    "target": "NHPC",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": null,
     "rtlt": null
   },
   {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "SOHO",
+    "target": "CGO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "245.8 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   }
 ]
