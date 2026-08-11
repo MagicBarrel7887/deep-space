@@ -37,9 +37,18 @@
     "target": "JWST",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "40.0 kbps",
     "rtlt": null
+  },
+  {
+    "id": "DSS-24",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-55",
@@ -128,7 +137,7 @@
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "SWFO",
+    "target": "SOHO",
     "band": "—",
     "status": "active",
     "signalType": null,
