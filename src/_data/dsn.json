@@ -24,8 +24,8 @@
     "target": "ESCG",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "66.1 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -46,8 +46,8 @@
     "target": "MRO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -114,17 +114,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "EURC",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-43",
     "site": "Canberra",
     "diameter": "70m",
@@ -136,14 +125,25 @@
     "rtlt": null
   },
   {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "ORX",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "MMS1",
+    "target": "JWST",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.3 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   }
 ]
