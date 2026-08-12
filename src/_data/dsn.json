@@ -93,11 +93,11 @@
     "id": "DSS-54",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "ACE",
+    "target": "EURC",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "87.7 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -117,7 +117,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "631 bps",
+    "dataRate": "422 bps",
     "rtlt": null
   },
   {
