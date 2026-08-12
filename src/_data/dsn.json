@@ -96,8 +96,8 @@
     "target": "EURC",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.3 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -117,7 +117,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "142.2 kbps",
+    "dataRate": "124.4 kbps",
     "rtlt": null
   },
   {
@@ -127,8 +127,19 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-34",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "ACE",
+    "band": "—",
+    "status": "active",
     "signalType": "data",
-    "dataRate": "142.2 kbps",
+    "dataRate": "87.7 kbps",
     "rtlt": null
   }
 ]
