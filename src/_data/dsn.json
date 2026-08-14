@@ -9,17 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-26",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "TGO",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
@@ -50,6 +39,17 @@
     "status": "active",
     "signalType": "data",
     "dataRate": "18.1 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-26",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "SOHO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "245.8 kbps",
     "rtlt": null
   },
   {
@@ -122,8 +122,8 @@
     "target": "NHPC",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "842 bps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
