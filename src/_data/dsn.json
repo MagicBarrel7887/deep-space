@@ -15,8 +15,8 @@
     "target": "TGO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "500.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -48,8 +48,8 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "18.1 kbps",
     "rtlt": null
   },
   {
@@ -101,12 +101,10 @@
     "id": "DSS-54",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "LRO",
+    "target": "—",
     "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-36",
