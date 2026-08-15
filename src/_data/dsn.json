@@ -34,7 +34,7 @@
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
-    "target": "MMS4",
+    "target": "MMS1",
     "band": "—",
     "status": "active",
     "signalType": "data",
@@ -113,8 +113,8 @@
     "target": "LRO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "146.4 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -125,7 +125,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "40 bps",
+    "dataRate": "160 bps",
     "rtlt": null
   },
   {
