@@ -48,8 +48,8 @@
     "target": "MMS1",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
     "rtlt": null
   },
   {
@@ -106,8 +106,8 @@
     "target": "LRO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "146.4 kbps",
     "rtlt": null
   },
   {
@@ -120,25 +120,14 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "HCRA",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
     "target": "CHDR",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.2 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -149,6 +138,17 @@
     "band": "—",
     "status": "active",
     "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "TESS",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   }
