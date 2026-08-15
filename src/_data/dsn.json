@@ -9,17 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-25",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "NHPC",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
@@ -45,7 +34,7 @@
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
-    "target": "MMS3",
+    "target": "MMS4",
     "band": "—",
     "status": "active",
     "signalType": "data",
@@ -124,8 +113,8 @@
     "target": "LRO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "146.4 kbps",
     "rtlt": null
   },
   {
