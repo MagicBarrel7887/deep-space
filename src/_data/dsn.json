@@ -48,8 +48,8 @@
     "target": "MEX",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "131.1 kbps",
     "rtlt": null
   },
   {
@@ -116,10 +116,10 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-34",
+    "id": "DSS-43",
     "site": "Canberra",
-    "diameter": "34m",
-    "target": "TESS",
+    "diameter": "70m",
+    "target": "DSSR",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -127,10 +127,10 @@
     "rtlt": null
   },
   {
-    "id": "DSS-43",
+    "id": "DSS-34",
     "site": "Canberra",
-    "diameter": "70m",
-    "target": "DSSR",
+    "diameter": "34m",
+    "target": "HCRA",
     "band": "—",
     "status": "active",
     "signalType": null,
