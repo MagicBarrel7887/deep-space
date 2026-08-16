@@ -9,17 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-25",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "STA",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
@@ -50,6 +39,17 @@
     "status": "active",
     "signalType": "data",
     "dataRate": "245.8 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "MEX",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -120,17 +120,6 @@
     "site": "Canberra",
     "diameter": "34m",
     "target": "TESS",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "16.0 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "ORX",
     "band": "—",
     "status": "active",
     "signalType": null,
