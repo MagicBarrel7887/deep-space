@@ -15,8 +15,8 @@
     "target": "STA",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "480.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -48,8 +48,8 @@
     "target": "SOHO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "245.8 kbps",
     "rtlt": null
   },
   {
@@ -92,23 +92,19 @@
     "id": "DSS-56",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "ACE",
+    "target": "—",
     "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "87.7 kbps",
-    "rtlt": null
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-53",
     "site": "Unknown",
     "diameter": "?",
-    "target": "CHDR",
+    "target": "—",
     "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "1.2 Mbps",
-    "rtlt": null
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-36",
@@ -137,8 +133,8 @@
     "target": "ORX",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "916.6 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
