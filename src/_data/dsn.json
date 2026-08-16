@@ -26,8 +26,8 @@
     "target": "MMS4",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "2.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -35,6 +35,17 @@
     "site": "Unknown",
     "diameter": "?",
     "target": "CHDR",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "STA",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -111,8 +122,8 @@
     "target": "LRO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "146.4 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
