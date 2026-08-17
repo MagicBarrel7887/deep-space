@@ -20,14 +20,25 @@
     "rtlt": null
   },
   {
-    "id": "DSS-24",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "MMS1",
+    "id": "DSS-23",
+    "site": "Unknown",
+    "diameter": "?",
+    "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.3 Mbps",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "M01O",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -111,8 +122,8 @@
     "target": "CAPS",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "256.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -122,8 +133,8 @@
     "target": "MMS2",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
     "rtlt": null
   }
 ]
