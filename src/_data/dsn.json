@@ -9,17 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-23",
-    "site": "Unknown",
-    "diameter": "?",
-    "target": "CHDR",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "1.2 Mbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-26",
     "site": "Goldstone",
     "diameter": "34m",
@@ -112,7 +101,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "631 bps",
+    "dataRate": "842 bps",
     "rtlt": null
   },
   {
@@ -130,7 +119,7 @@
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "LRO",
+    "target": "MMS2",
     "band": "—",
     "status": "active",
     "signalType": null,
