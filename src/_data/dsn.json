@@ -9,17 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-24",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "PSYC",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "358.7 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-26",
     "site": "Goldstone",
     "diameter": "34m",
@@ -35,6 +24,17 @@
     "site": "Unknown",
     "diameter": "?",
     "target": "KPLO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "8.2 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-24",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "THB",
     "band": "—",
     "status": "active",
     "signalType": null,
@@ -124,8 +124,8 @@
     "target": "PSYC",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "358.7 kbps",
     "rtlt": null
   },
   {
