@@ -15,8 +15,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "39.8 kbps",
     "rtlt": null
   },
   {
@@ -26,8 +26,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "39.8 kbps",
     "rtlt": null
   },
   {
@@ -133,8 +133,8 @@
     "target": "JWST",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "40.0 kbps",
     "rtlt": null
   },
   {
@@ -144,8 +144,8 @@
     "target": "VGR2",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "160 bps",
     "rtlt": null
   }
 ]
