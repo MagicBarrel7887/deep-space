@@ -15,19 +15,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "39.8 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-25",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "M01O",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "39.8 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -42,14 +31,25 @@
     "rtlt": null
   },
   {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "STA",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
     "id": "DSS-26",
     "site": "Goldstone",
     "diameter": "34m",
-    "target": "WIND",
+    "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "6.4 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -122,8 +122,8 @@
     "target": "ORX",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "916.6 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
