@@ -15,8 +15,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "28.4 kbps",
     "rtlt": null
   },
   {
@@ -37,8 +37,8 @@
     "target": "STA",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "480.0 kbps",
     "rtlt": null
   },
   {
@@ -48,8 +48,8 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "26.0 kbps",
     "rtlt": null
   },
   {
@@ -116,17 +116,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "ORX",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
@@ -146,6 +135,17 @@
     "status": "active",
     "signalType": "data",
     "dataRate": "160 bps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "MMS3",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
     "rtlt": null
   }
 ]
