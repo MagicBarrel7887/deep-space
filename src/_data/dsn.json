@@ -23,11 +23,11 @@
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
-    "target": "NHPC",
+    "target": "MMS2",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
     "rtlt": null
   },
   {
@@ -125,7 +125,7 @@
     "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "NHPC",
+    "target": "ORX",
     "band": "—",
     "status": "active",
     "signalType": null,
