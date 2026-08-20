@@ -15,8 +15,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "8.2 kbps",
     "rtlt": null
   },
   {
@@ -26,18 +26,7 @@
     "target": "ORX",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
-    "id": "DSS-24",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "LRO",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   },
@@ -53,14 +42,14 @@
     "rtlt": null
   },
   {
-    "id": "DSS-56",
-    "site": "Madrid",
+    "id": "DSS-24",
+    "site": "Goldstone",
     "diameter": "34m",
-    "target": "MMS2",
+    "target": "CHDR",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "2.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -97,8 +86,30 @@
     "target": "MRO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "1.5 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-54",
+    "site": "Madrid",
+    "diameter": "34m",
+    "target": "MMS3",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-56",
+    "site": "Madrid",
+    "diameter": "34m",
+    "target": "PSYC",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "358.7 kbps",
     "rtlt": null
   },
   {
@@ -108,8 +119,8 @@
     "target": "PSYC",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "358.7 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
