@@ -9,28 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-26",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "PSYC",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "358.7 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-25",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "TGO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "500.0 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
@@ -48,9 +26,29 @@
     "target": "CGO",
     "band": "—",
     "status": "active",
+    "signalType": "data",
+    "dataRate": "1.0 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "ORX",
+    "band": "—",
+    "status": "active",
     "signalType": null,
     "dataRate": null,
     "rtlt": null
+  },
+  {
+    "id": "DSS-26",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-55",
@@ -86,17 +84,6 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "8.2 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-56",
-    "site": "Madrid",
-    "diameter": "34m",
-    "target": "LRO",
-    "band": "—",
-    "status": "active",
     "signalType": null,
     "dataRate": null,
     "rtlt": null
@@ -110,6 +97,17 @@
     "status": "active",
     "signalType": "data",
     "dataRate": "28.0 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-56",
+    "site": "Madrid",
+    "diameter": "34m",
+    "target": "MMS1",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
     "rtlt": null
   },
   {
@@ -128,8 +126,8 @@
     "target": "PSYC",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "358.7 kbps",
     "rtlt": null
   },
   {
@@ -139,8 +137,8 @@
     "target": "STA",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "480.0 kbps",
     "rtlt": null
   },
   {
@@ -150,8 +148,8 @@
     "target": "SOHO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "245.8 kbps",
     "rtlt": null
   }
 ]
