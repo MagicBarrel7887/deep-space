@@ -15,8 +15,8 @@
     "target": "MRO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "1.3 Mbps",
     "rtlt": null
   },
   {
@@ -97,8 +97,8 @@
     "target": "EURC",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "119 bps",
     "rtlt": null
   },
   {
