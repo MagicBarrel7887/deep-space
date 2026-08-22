@@ -37,8 +37,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "8.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -48,8 +48,8 @@
     "target": "CHDR",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "1.2 Mbps",
     "rtlt": null
   },
   {
@@ -113,17 +113,6 @@
     "rtlt": null
   },
   {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "PSYC",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-43",
     "site": "Canberra",
     "diameter": "70m",
@@ -152,6 +141,17 @@
     "status": "active",
     "signalType": "data",
     "dataRate": "26.0 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "LUCY",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   }
 ]
