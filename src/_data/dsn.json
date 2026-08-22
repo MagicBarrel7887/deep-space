@@ -37,8 +37,8 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "8.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -48,8 +48,8 @@
     "target": "MMS1",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "2.5 Mbps",
     "rtlt": null
   },
   {
@@ -139,8 +139,8 @@
     "target": "JNO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "26.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
