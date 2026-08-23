@@ -26,19 +26,30 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "28.4 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
-    "target": "M20",
+    "target": "MRO",
     "band": "—",
     "status": "active",
     "signalType": null,
     "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-24",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "TGO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "500.0 kbps",
     "rtlt": null
   },
   {
@@ -75,8 +86,8 @@
     "target": "CHDR",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.2 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -97,8 +108,8 @@
     "target": "CGO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "1.0 Mbps",
     "rtlt": null
   },
   {
@@ -117,8 +128,8 @@
     "target": "JWST",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "28.0 Mbps",
     "rtlt": null
   },
   {
@@ -128,8 +139,8 @@
     "target": "CAPS",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "256.0 kbps",
     "rtlt": null
   },
   {
@@ -139,7 +150,7 @@
     "target": "NHPC",
     "band": "—",
     "status": "active",
-    "signalType": null,
+    "signalType": "data",
     "dataRate": null,
     "rtlt": null
   }
