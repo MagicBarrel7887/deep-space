@@ -15,15 +15,15 @@
     "target": "JWST",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "28.0 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
     "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
-    "target": "MMS1",
+    "target": "MMS2",
     "band": "—",
     "status": "active",
     "signalType": "data",
@@ -86,8 +86,8 @@
     "target": "IMAP",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "714.3 kbps",
     "rtlt": null
   },
   {
@@ -121,11 +121,11 @@
     "id": "DSS-43",
     "site": "Canberra",
     "diameter": "70m",
-    "target": "VGR1",
+    "target": "VGR2",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "160 bps",
     "rtlt": null
   }
 ]
