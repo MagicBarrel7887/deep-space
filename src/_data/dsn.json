@@ -20,17 +20,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-23",
-    "site": "Unknown",
-    "diameter": "?",
-    "target": "THC",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
@@ -50,6 +39,17 @@
     "status": "active",
     "signalType": "data",
     "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-23",
+    "site": "Unknown",
+    "diameter": "?",
+    "target": "KPLO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "8.2 kbps",
     "rtlt": null
   },
   {
@@ -122,17 +122,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "PSYC",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
@@ -152,6 +141,17 @@
     "status": "active",
     "signalType": "data",
     "dataRate": "245.8 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "LUCY",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "20.0 kbps",
     "rtlt": null
   }
 ]
