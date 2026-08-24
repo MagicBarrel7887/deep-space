@@ -37,6 +37,17 @@
     "target": "KPLO",
     "band": "—",
     "status": "active",
+    "signalType": "data",
+    "dataRate": "8.2 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-24",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "MMS1",
+    "band": "—",
+    "status": "active",
     "signalType": null,
     "dataRate": null,
     "rtlt": null
@@ -75,8 +86,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "28.4 kbps",
     "rtlt": null
   },
   {
@@ -111,17 +122,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-34",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "CGO",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": null
-  },
-  {
     "id": "DSS-35",
     "site": "Canberra",
     "diameter": "34m",
@@ -140,6 +140,17 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-34",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "LRO",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
     "dataRate": null,
     "rtlt": null
   }
