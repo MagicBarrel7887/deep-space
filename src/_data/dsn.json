@@ -35,8 +35,8 @@
     "target": "LUCY",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "20.0 kbps",
     "rtlt": null
   },
   {
@@ -46,8 +46,8 @@
     "target": "SOHO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "54.6 kbps",
     "rtlt": null
   },
   {
@@ -126,8 +126,8 @@
     "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "28.4 kbps",
     "rtlt": null
   },
   {
@@ -137,8 +137,8 @@
     "target": "MRO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "1.5 Mbps",
     "rtlt": null
   },
   {
@@ -149,7 +149,7 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "358.7 kbps",
+    "dataRate": "250 bps",
     "rtlt": null
   }
 ]
