@@ -37,8 +37,8 @@
     "target": "TGO",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "500.0 kbps",
     "rtlt": null
   },
   {
@@ -108,8 +108,8 @@
     "target": "TESS",
     "band": "—",
     "status": "active",
-    "signalType": null,
-    "dataRate": null,
+    "signalType": "data",
+    "dataRate": "16.0 kbps",
     "rtlt": null
   },
   {
