@@ -3,7 +3,7 @@
     "name": "Voyager 1",
     "distanceAu": 171.4,
     "lightTime": "23h 46m",
-    "speed": "40.5 km/s",
+    "speed": "40.6 km/s",
     "launched": "Sep 5, 1977",
     "status": "2 of 10 instruments still active, power-limited",
     "news": [
@@ -21,7 +21,7 @@
     "name": "Voyager 2",
     "distanceAu": 143.2,
     "lightTime": "19h 51m",
-    "speed": "31.2 km/s",
+    "speed": "31.5 km/s",
     "launched": "Aug 20, 1977",
     "status": "Plasma science instrument powered down, power-limited",
     "news": [
@@ -37,9 +37,9 @@
   },
   {
     "name": "New Horizons",
-    "distanceAu": 64.7,
-    "lightTime": "8h 58m",
-    "speed": "35.2 km/s",
+    "distanceAu": 64.8,
+    "lightTime": "8h 59m",
+    "speed": "35.5 km/s",
     "launched": "Jan 19, 2006",
     "status": "Nominal, searching for next KBO flyby target",
     "news": [
@@ -53,7 +53,7 @@
     "name": "Parker Solar Probe",
     "distanceAu": 0.7,
     "lightTime": "6m",
-    "speed": "48.7 km/s",
+    "speed": "53.3 km/s",
     "launched": "Aug 12, 2018",
     "status": "Nominal, near-perihelion pass",
     "news": [
