@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "M74: A Grand Design Spiral",
-    "caption": "If not the most grand, then this spiral galaxy is at least one of the most photogenic.",
+    "title": "A Plane Lunar Eclipse",
+    "caption": "Did you need to be on the right side of this airplane to see this eclipse? No.",
     "url": "img/apod.jpg"
   },
   {
@@ -12,9 +12,9 @@
     "url": "img/earth.jpg"
   },
   {
-    "tag": "MARS · SOL 1965",
-    "title": "Perseverance — NAVCAM_RIGHT",
-    "caption": "Jezero Crater, Sol-01965M15:28:38.766",
+    "tag": "MARS · SOL 1966",
+    "title": "Perseverance — NAVCAM_LEFT",
+    "caption": "Jezero Crater, Sol-01966M11:51:55.064",
     "url": "img/mars-latest.jpg"
   },
   {
