@@ -13,14 +13,14 @@
   },
   {
     "date": "Sep 03",
+    "label": "Asteroid 2026 RE close approach, 0.03 AU"
+  },
+  {
+    "date": "Sep 03",
     "label": "Asteroid 2026 RC close approach, 0.00 AU"
   },
   {
     "date": "Sep 06",
     "label": "Asteroid 2022 RK close approach, 0.03 AU"
-  },
-  {
-    "date": "Sep 06",
-    "label": "Asteroid 2026 RD close approach, 0.01 AU"
   }
 ]
