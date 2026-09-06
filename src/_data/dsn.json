@@ -9,17 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-25",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "JNO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "18.1 kbps",
-    "rtlt": null
-  },
-  {
     "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
@@ -49,7 +38,18 @@
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "4.0 kbps",
+    "dataRate": "1.0 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "EURC",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "833 bps",
     "rtlt": null
   },
   {
@@ -101,22 +101,11 @@
     "id": "DSS-53",
     "site": "Unknown",
     "diameter": "?",
-    "target": "CHDR",
+    "target": "RST",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "1.2 Mbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-43",
-    "site": "Canberra",
-    "diameter": "70m",
-    "target": "VGR2",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "160 bps",
+    "dataRate": "780.0 kbps",
     "rtlt": null
   },
   {
@@ -126,8 +115,8 @@
     "target": "MRO",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "1.5 Mbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -135,6 +124,28 @@
     "site": "Canberra",
     "diameter": "34m",
     "target": "M01O",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "28.4 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "M20",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-43",
+    "site": "Canberra",
+    "diameter": "70m",
+    "target": "GBRA",
     "band": "—",
     "status": "active",
     "signalType": null,
