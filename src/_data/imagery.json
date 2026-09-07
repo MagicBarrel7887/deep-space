@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "Pluto in Enhanced Color",
-    "caption": "Pluto is more colorful than we can see.",
+    "title": "The Pelican Nebula in Gas, Dust, and Stars",
+    "caption": "The Pelican Nebula is slowly being transformed.",
     "url": "img/apod.jpg"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 1972",
-    "title": "Perseverance — SUPERCAM_RMI",
-    "caption": "Jezero Crater, Sol-01972M13:06:32.910",
+    "title": "Perseverance — NAVCAM_LEFT",
+    "caption": "Jezero Crater, Sol-01972M14:27:02.619",
     "url": "img/mars-latest.jpg"
   },
   {
