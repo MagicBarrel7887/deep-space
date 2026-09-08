@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "The Pelican Nebula in Gas, Dust, and Stars",
-    "caption": "The Pelican Nebula is slowly being transformed.",
+    "title": "Hubble: Decagon Around Saturn's South Pole",
+    "caption": "Why are Saturn’s poles geometric? Saturn’s North Pole has been known to be surrounded by a hexagonal (6 sides) cloud since discovery in 1987 in data taken by NASA’s Voyager spacecrafts, which quickly flew past the ringed world in the early 1980s.",
     "url": "img/apod.jpg"
   },
   {
@@ -12,9 +12,9 @@
     "url": "img/earth.jpg"
   },
   {
-    "tag": "MARS · SOL 1972",
-    "title": "Perseverance — SKYCAM",
-    "caption": "Jezero Crater, Sol-01972M15:47:48.582",
+    "tag": "MARS · SOL 1973",
+    "title": "Perseverance — FRONT_HAZCAM_RIGHT_A",
+    "caption": "Jezero Crater, Sol-01973M15:48:37.363",
     "url": "img/mars-latest.jpg"
   },
   {
