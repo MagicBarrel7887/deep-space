@@ -12,15 +12,15 @@
     "label": "New Horizons KBO candidate observation window"
   },
   {
-    "date": "Sep 07",
-    "label": "Asteroid 2026 RE1 close approach, 0.03 AU"
-  },
-  {
-    "date": "Sep 07",
-    "label": "Asteroid 2026 RO1 close approach, 0.01 AU"
+    "date": "Sep 08",
+    "label": "Asteroid 2026 RR1 close approach, 0.00 AU"
   },
   {
     "date": "Sep 08",
-    "label": "Asteroid 2026 RR1 close approach, 0.00 AU"
+    "label": "Asteroid 2026 RN2 close approach, 0.00 AU"
+  },
+  {
+    "date": "Sep 08",
+    "label": "Asteroid 2026 RT1 close approach, 0.05 AU"
   }
 ]
