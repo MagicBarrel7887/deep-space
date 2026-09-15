@@ -1,20 +1,20 @@
 [
   {
     "tag": "APOD",
-    "title": "Where Your Elements Came From",
-    "caption": "The hydrogen in your body and present in every molecule of water came from the Big Bang.",
+    "title": "A Daytime Eclipse: Moon Occults Venus",
+    "caption": "There was something behind the clouds.",
     "url": "img/apod.jpg"
   },
   {
     "tag": "EARTH",
     "title": "Full Globe — VIIRS True Color",
-    "caption": "NASA GIBS/Worldview, 2026-09-13",
+    "caption": "NASA GIBS/Worldview, 2026-09-14",
     "url": "img/earth.jpg"
   },
   {
     "tag": "MARS · SOL 1979",
-    "title": "Perseverance — NAVCAM_RIGHT",
-    "caption": "Jezero Crater, Sol-01979M14:52:43.102",
+    "title": "Perseverance — SKYCAM",
+    "caption": "Jezero Crater, Sol-01979M17:23:50.460",
     "url": "img/mars-latest.jpg"
   },
   {
