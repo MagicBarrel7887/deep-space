@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "Webb's View of M64",
-    "caption": "Sometimes where Hubble finds darkness, Webb sees light.",
+    "title": "A Treasure Chest in the Carina Nebula",
+    "caption": "This treasure chest is full of stars.",
     "url": "img/apod.jpg"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 1981",
-    "title": "Perseverance — NAVCAM_LEFT",
-    "caption": "Jezero Crater, Sol-01981M14:26:27.976",
+    "title": "Perseverance — SKYCAM",
+    "caption": "Jezero Crater, Sol-01981M17:38:49.670",
     "url": "img/mars-latest.jpg"
   },
   {
