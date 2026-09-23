@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "Chance Triple Alignment: Plane, Space Station, Sun",
-    "caption": "This shot captured an unexpected silhouette.",
+    "title": "A New Lunar Crater: McGetchin",
+    "caption": "A once-in-a-lifetime crater has appeared on the Moon! A comet or asteroid roughly the size of a humpback whale (approximately 10-20 meters, 30-60 feet) crashed into the Moon sometime between April and May of 2024.",
     "url": "img/apod.jpg"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 1987",
-    "title": "Perseverance — MCZ_RIGHT",
-    "caption": "Jezero Crater, Sol-01987M12:44:55.100",
+    "title": "Perseverance — SUPERCAM_RMI",
+    "caption": "Jezero Crater, Sol-01987M19:17:33.525",
     "url": "img/mars-latest.jpg"
   },
   {
