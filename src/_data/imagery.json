@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "The Ghosts of Five Supernovas",
-    "caption": "The ghosts of five supernovas haunt this extraordinary image.",
+    "title": "Globular Cluster Omega Centauri",
+    "caption": "Globular star cluster Omega Centauri packs about 10 million stars much older than the Sun into a volume some 150 light-years in diameter.",
     "url": "img/apod.jpg"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 1989",
-    "title": "Perseverance — FRONT_HAZCAM_LEFT_A",
-    "caption": "Jezero Crater, Sol-01989M14:40:53.702",
+    "title": "Perseverance — SUPERCAM_RMI",
+    "caption": "Jezero Crater, Sol-01989M19:31:20.233",
     "url": "img/mars-latest.jpg"
   },
   {
