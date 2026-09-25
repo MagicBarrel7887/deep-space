@@ -1,9 +1,9 @@
 [
   {
     "name": "Voyager 1",
-    "distanceAu": 172,
+    "distanceAu": 172.1,
     "lightTime": "23h 51m",
-    "speed": "40.3 km/s",
+    "speed": "40.2 km/s",
     "launched": "Sep 5, 1977",
     "status": "2 of 10 instruments still active, power-limited",
     "news": [
@@ -21,7 +21,7 @@
     "name": "Voyager 2",
     "distanceAu": 143.8,
     "lightTime": "19h 56m",
-    "speed": "37.0 km/s",
+    "speed": "37.1 km/s",
     "launched": "Aug 20, 1977",
     "status": "Plasma science instrument powered down, power-limited",
     "news": [
@@ -39,7 +39,7 @@
     "name": "New Horizons",
     "distanceAu": 65.4,
     "lightTime": "9h 04m",
-    "speed": "42.0 km/s",
+    "speed": "42.2 km/s",
     "launched": "Jan 19, 2006",
     "status": "Nominal, searching for next KBO flyby target",
     "news": [
