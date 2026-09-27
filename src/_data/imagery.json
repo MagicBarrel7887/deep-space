@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "Mirrored Meteor and Milky Way",
-    "caption": "On August 15, this perseid meteor streaked through night skies over the Observatorio del Roque de los Muchachos at La Palma, Canary Islands, Spain.",
+    "title": "Andromeda before Photoshop",
+    "caption": "What does the Andromeda galaxy really look like? The featured image shows how our Milky Way Galaxy's closest major galactic neighbor really appears in a long exposure through Earth's busy skies and with a digital camera that introduces normal imperfections.",
     "url": "img/apod.jpg"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 1991",
-    "title": "Perseverance — SHERLOC_WATSON",
-    "caption": "Jezero Crater, Sol-01991M16:43:13.972",
+    "title": "Perseverance — SHERLOC_ACI",
+    "caption": "Jezero Crater, Sol-01991M21:29:33.810",
     "url": "img/mars-latest.jpg"
   },
   {
