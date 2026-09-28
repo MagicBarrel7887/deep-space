@@ -1,8 +1,8 @@
 [
   {
     "tag": "APOD",
-    "title": "Andromeda before Photoshop",
-    "caption": "What does the Andromeda galaxy really look like? The featured image shows how our Milky Way Galaxy's closest major galactic neighbor really appears in a long exposure through Earth's busy skies and with a digital camera that introduces normal imperfections.",
+    "title": "Cosmic Latte: The Average Color of the Universe",
+    "caption": "What color is the universe?  More precisely, if the entire sky were smeared out, what color would the final mix be?  This whimsical question came up when trying to determine what stars are commonplace in nearby galaxies.",
     "url": "img/apod.jpg"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 1992",
-    "title": "Perseverance — FRONT_HAZCAM_LEFT_A",
-    "caption": "Jezero Crater, Sol-01992M12:33:35.854",
+    "title": "Perseverance — NAVCAM_LEFT",
+    "caption": "Jezero Crater, Sol-01992M14:30:31.801",
     "url": "img/mars-latest.jpg"
   },
   {
