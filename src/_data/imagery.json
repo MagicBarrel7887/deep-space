@@ -1,9 +1,9 @@
 [
   {
     "tag": "APOD",
-    "title": "Sh2-188: The Shrimp Nebula",
-    "caption": "What causes the swirl in the Shrimp Nebula? Its high speed is likely.",
-    "url": "img/apod.jpg"
+    "title": "NASA Science",
+    "caption": "Have you ever seen the full moon rise? This colorful image was photographed last weekend in Sicily, just outside the town of Nicosia, in Italy.",
+    "url": "img/apod.png"
   },
   {
     "tag": "EARTH",
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 1995",
-    "title": "Perseverance — SUPERCAM_RMI",
-    "caption": "Jezero Crater, Sol-01995M12:29:56.726",
+    "title": "Perseverance — SKYCAM",
+    "caption": "Jezero Crater, Sol-01995M17:35:50.071",
     "url": "img/mars-latest.jpg"
   },
   {
