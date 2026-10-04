@@ -2,19 +2,19 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "On sol 1943 of its journey of exploration across the surface of Mars, the Curiosity Rover recorded this selfie at the south rim of Vera Rubin Ridge.",
+    "caption": "Yes, but can your rainbow do this? After the remnants of Hurricane Florence passed over the Jersey Shore, New Jersey, USA in 2018, the Sun came out in one direction but something quite unusual appeared in the opposite direction: a hall of rainbows.",
     "url": "img/apod.png"
   },
   {
     "tag": "EARTH",
     "title": "Full Globe — VIIRS True Color",
-    "caption": "NASA GIBS/Worldview, 2026-10-02",
+    "caption": "NASA GIBS/Worldview, 2026-10-03",
     "url": "img/earth.jpg"
   },
   {
     "tag": "MARS · SOL 1998",
-    "title": "Perseverance — MCZ_RIGHT",
-    "caption": "Jezero Crater, Sol-01998M13:30:18.333",
+    "title": "Perseverance — SHERLOC_ACI",
+    "caption": "Jezero Crater, Sol-01998M21:47:54.786",
     "url": "img/mars-latest.jpg"
   },
   {
