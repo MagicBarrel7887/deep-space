@@ -1,5 +1,38 @@
 [
   {
+    "id": "DSS-24",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "VGR1",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "VGR1",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-23",
+    "site": "Unknown",
+    "diameter": "?",
+    "target": "VGR1",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
     "id": "DSS-14",
     "site": "Goldstone",
     "diameter": "70m",
@@ -9,46 +42,24 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-25",
+    "id": "DSS-26",
     "site": "Goldstone",
     "diameter": "34m",
+    "target": "CHDR",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "1.2 Mbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-53",
+    "site": "Unknown",
+    "diameter": "?",
     "target": "—",
     "band": "—",
     "status": "idle",
     "note": "no active target in feed right now"
-  },
-  {
-    "id": "DSS-26",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "LUCY",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "20.0 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-24",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "SOHO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "245.8 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-23",
-    "site": "Unknown",
-    "diameter": "?",
-    "target": "CGO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "1.0 Mbps",
-    "rtlt": null
   },
   {
     "id": "DSS-55",
@@ -72,53 +83,22 @@
     "id": "DSS-65",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "RST",
+    "target": "M01O",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "780.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
-  },
-  {
-    "id": "DSS-53",
-    "site": "Unknown",
-    "diameter": "?",
-    "target": "—",
-    "band": "—",
-    "status": "idle",
-    "note": "no active target in feed right now"
   },
   {
     "id": "DSS-54",
     "site": "Madrid",
     "diameter": "34m",
-    "target": "JWST",
+    "target": "ESCG",
     "band": "—",
     "status": "active",
-    "signalType": "data",
-    "dataRate": "40.0 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-36",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "JNO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "26.0 kbps",
-    "rtlt": null
-  },
-  {
-    "id": "DSS-35",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "STA",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "480.0 kbps",
+    "signalType": null,
+    "dataRate": null,
     "rtlt": null
   },
   {
@@ -134,7 +114,29 @@
     "id": "DSS-34",
     "site": "Canberra",
     "diameter": "34m",
-    "target": "LRO",
+    "target": "SOHO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "245.8 kbps",
+    "rtlt": null
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "WIND",
+    "band": "—",
+    "status": "active",
+    "signalType": null,
+    "dataRate": null,
+    "rtlt": null
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "SWFO",
     "band": "—",
     "status": "active",
     "signalType": null,
