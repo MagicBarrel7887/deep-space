@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "How many moons can you see? The best answer is five: four orbiting Jupiter and Luna orbiting Earth.",
+    "caption": "This stairway in Chile brings you only a little bit closer to heaven.",
     "url": "img/apod.png"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 2007",
-    "title": "Perseverance — NAVCAM_LEFT",
-    "caption": "Jezero Crater, Sol-02007M11:21:18.958",
+    "title": "Perseverance — SKYCAM",
+    "caption": "Jezero Crater, Sol-02007M17:24:49.759",
     "url": "img/mars-latest.jpg"
   },
   {
