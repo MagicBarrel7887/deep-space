@@ -2,8 +2,8 @@
   {
     "name": "Voyager 1",
     "distanceAu": 172.5,
-    "lightTime": "23h 54m",
-    "speed": "37.2 km/s",
+    "lightTime": "23h 55m",
+    "speed": "36.9 km/s",
     "launched": "Sep 5, 1977",
     "status": "2 of 10 instruments still active, power-limited",
     "news": [
@@ -38,7 +38,7 @@
   {
     "name": "New Horizons",
     "distanceAu": 65.8,
-    "lightTime": "9h 07m",
+    "lightTime": "9h 08m",
     "speed": "43.3 km/s",
     "launched": "Jan 19, 2006",
     "status": "Nominal, searching for next KBO flyby target",
