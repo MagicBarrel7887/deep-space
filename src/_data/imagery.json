@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "This stairway in Chile brings you only a little bit closer to heaven.",
+    "caption": "What a cosmic coincidence! In today’s image, Mars joins the Beehive cluster (M44 or Praesepe) below an auroral curtain and above a horizon of happy little trees near Lansjärv, Sweden.",
     "url": "img/apod.png"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 2008",
-    "title": "Perseverance — SHERLOC_WATSON",
-    "caption": "Jezero Crater, Sol-02008M15:28:26.164",
+    "title": "Perseverance — SKYCAM",
+    "caption": "Jezero Crater, Sol-02008M15:52:47.977",
     "url": "img/mars-latest.jpg"
   },
   {
