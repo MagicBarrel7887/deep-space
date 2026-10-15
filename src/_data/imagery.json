@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "What a cosmic coincidence! In today’s image, Mars joins the Beehive cluster (M44 or Praesepe) below an auroral curtain and above a horizon of happy little trees near Lansjärv, Sweden.",
+    "caption": "The city lights outshine the stars in the City That Never Sleeps.",
     "url": "img/apod.png"
   },
   {
@@ -12,9 +12,9 @@
     "url": "img/earth.jpg"
   },
   {
-    "tag": "MARS · SOL 2008",
-    "title": "Perseverance — SKYCAM",
-    "caption": "Jezero Crater, Sol-02008M15:52:47.977",
+    "tag": "MARS · SOL 2009",
+    "title": "Perseverance — NAVCAM_LEFT",
+    "caption": "Jezero Crater, Sol-02009M13:26:40.387",
     "url": "img/mars-latest.jpg"
   },
   {
