@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "The city lights outshine the stars in the City That Never Sleeps.",
+    "caption": "To view this video please enable JavaScript, and consider upgrading to a web browser that \t\t\t\t\tsupports HTML5 vide.",
     "url": "img/apod.png"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 2010",
-    "title": "Perseverance — NAVCAM_RIGHT",
-    "caption": "Jezero Crater, Sol-02010M10:34:02.514",
+    "title": "Perseverance — NAVCAM_LEFT",
+    "caption": "Jezero Crater, Sol-02010M11:21:51.693",
     "url": "img/mars-latest.jpg"
   },
   {
