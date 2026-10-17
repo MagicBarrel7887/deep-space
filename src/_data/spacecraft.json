@@ -1,9 +1,9 @@
 [
   {
     "name": "Voyager 1",
-    "distanceAu": 172.5,
+    "distanceAu": 172.6,
     "lightTime": "23h 55m",
-    "speed": "36.5 km/s",
+    "speed": "36.2 km/s",
     "launched": "Sep 5, 1977",
     "status": "2 of 10 instruments still active, power-limited",
     "news": [
@@ -19,7 +19,7 @@
   },
   {
     "name": "Voyager 2",
-    "distanceAu": 144.2,
+    "distanceAu": 144.3,
     "lightTime": "19h 60m",
     "speed": "38.4 km/s",
     "launched": "Aug 20, 1977",
@@ -53,7 +53,7 @@
     "name": "Parker Solar Probe",
     "distanceAu": 0.9,
     "lightTime": "7m",
-    "speed": "9.8 km/s",
+    "speed": "9.6 km/s",
     "launched": "Aug 12, 2018",
     "status": "Nominal, near-perihelion pass",
     "news": [
