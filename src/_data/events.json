@@ -12,15 +12,15 @@
     "label": "New Horizons KBO candidate observation window"
   },
   {
-    "date": "Oct 19",
-    "label": "Asteroid 2026 UK close approach, 0.02 AU"
-  },
-  {
-    "date": "Oct 19",
-    "label": "Asteroid 2026 UQ close approach, 0.01 AU"
+    "date": "Oct 20",
+    "label": "Asteroid 2026 TD2 close approach, 0.02 AU"
   },
   {
     "date": "Oct 20",
-    "label": "Asteroid 2026 TD2 close approach, 0.02 AU"
+    "label": "Asteroid 2026 TP close approach, 0.03 AU"
+  },
+  {
+    "date": "Oct 20",
+    "label": "Asteroid 2020 FN3 close approach, 0.03 AU"
   }
 ]
