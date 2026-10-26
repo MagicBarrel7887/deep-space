@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "The Great Nebula in Orion, an immense, nearby starbirth region, is one the most famous of all astronomical nebulas.",
+    "caption": "The Great Nebula in Orion, an immense, nearby starbirth region, is one of the most famous of all astronomical nebulas.",
     "url": "img/apod.png"
   },
   {
@@ -12,9 +12,9 @@
     "url": "img/earth.jpg"
   },
   {
-    "tag": "MARS · SOL 2019",
-    "title": "Perseverance — SKYCAM",
-    "caption": "Jezero Crater, Sol-02019M17:32:50.099",
+    "tag": "MARS · SOL 2020",
+    "title": "Perseverance — MCZ_RIGHT",
+    "caption": "Jezero Crater, Sol-02020M12:02:28.335",
     "url": "img/mars-latest.jpg"
   },
   {
