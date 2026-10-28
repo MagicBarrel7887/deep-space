@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": " Sometimes it's night on the ground but day in the air.",
+    "caption": "To view this video please enable JavaScript, and consider upgrading to a web browser that \t\t\t\t\tsupports HTML5 vide.",
     "url": "img/apod.png"
   },
   {
@@ -12,9 +12,9 @@
     "url": "img/earth.jpg"
   },
   {
-    "tag": "MARS · SOL 2021",
-    "title": "Perseverance — SKYCAM",
-    "caption": "Jezero Crater, Sol-02021M17:34:49.735",
+    "tag": "MARS · SOL 2022",
+    "title": "Perseverance — NAVCAM_RIGHT",
+    "caption": "Jezero Crater, Sol-02022M13:56:34.323",
     "url": "img/mars-latest.jpg"
   },
   {
