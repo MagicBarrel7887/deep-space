@@ -8,13 +8,13 @@
   {
     "tag": "EARTH",
     "title": "Full Globe — VIIRS True Color",
-    "caption": "NASA GIBS/Worldview, 2026-10-26",
+    "caption": "NASA GIBS/Worldview, 2026-10-27",
     "url": "img/earth.jpg"
   },
   {
     "tag": "MARS · SOL 2021",
-    "title": "Perseverance — SUPERCAM_RMI",
-    "caption": "Jezero Crater, Sol-02021M12:14:50.306",
+    "title": "Perseverance — SKYCAM",
+    "caption": "Jezero Crater, Sol-02021M17:34:49.735",
     "url": "img/mars-latest.jpg"
   },
   {
