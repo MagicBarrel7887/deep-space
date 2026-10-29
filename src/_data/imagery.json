@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "To view this video please enable JavaScript, and consider upgrading to a web browser that \t\t\t\t\tsupports HTML5 vide.",
+    "caption": "That's no moon.",
     "url": "img/apod.png"
   },
   {
@@ -12,9 +12,9 @@
     "url": "img/earth.jpg"
   },
   {
-    "tag": "MARS · SOL 2022",
-    "title": "Perseverance — NAVCAM_LEFT",
-    "caption": "Jezero Crater, Sol-02022M16:20:47.171",
+    "tag": "MARS · SOL 2023",
+    "title": "Perseverance — SHERLOC_WATSON",
+    "caption": "Jezero Crater, Sol-02023M17:33:28.887",
     "url": "img/mars-latest.jpg"
   },
   {
