@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "That's no moon.",
+    "caption": "Spooky shapes seem to haunt this dusty expanse, drifting through the night in the royal constellation Cepheus.",
     "url": "img/apod.png"
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "tag": "MARS · SOL 2023",
-    "title": "Perseverance — SHERLOC_WATSON",
-    "caption": "Jezero Crater, Sol-02023M17:33:28.887",
+    "title": "Perseverance — SKYCAM",
+    "caption": "Jezero Crater, Sol-02023M17:36:50.344",
     "url": "img/mars-latest.jpg"
   },
   {
