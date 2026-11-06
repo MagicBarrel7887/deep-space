@@ -2,7 +2,7 @@
   {
     "tag": "APOD",
     "title": "NASA Science",
-    "caption": "One of our Solar System's most tantalizing worlds, Enceladus is backlit by the Sun in this Cassini spacecraft image from November 1, 2009.",
+    "caption": "It is time to say goodbye to NASA's Neil Gehrels Swift Observatory.",
     "url": "img/apod.png"
   },
   {
@@ -12,9 +12,9 @@
     "url": "img/earth.jpg"
   },
   {
-    "tag": "MARS · SOL 2024",
-    "title": "Perseverance — MCZ_LEFT",
-    "caption": "Jezero Crater, Sol-02024M13:10:59.198",
+    "tag": "MARS · SOL 2031",
+    "title": "Perseverance — SUPERCAM_RMI",
+    "caption": "Jezero Crater, Sol-02031M11:30:55.785",
     "url": "img/mars-latest.jpg"
   },
   {
