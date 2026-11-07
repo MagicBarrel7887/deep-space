@@ -12,15 +12,15 @@
     "label": "New Horizons KBO candidate observation window"
   },
   {
-    "date": "Nov 06",
-    "label": "Asteroid 2001 KF54 close approach, 0.05 AU"
-  },
-  {
-    "date": "Nov 06",
-    "label": "Asteroid 2026 VN1 close approach, 0.00 AU"
+    "date": "Nov 07",
+    "label": "Asteroid 2026 VZ3 close approach, 0.05 AU"
   },
   {
     "date": "Nov 07",
-    "label": "Asteroid 2026 VG3 close approach, 0.00 AU"
+    "label": "Asteroid 2026 VP4 close approach, 0.03 AU"
+  },
+  {
+    "date": "Nov 08",
+    "label": "Asteroid 2026 VK2 close approach, 0.01 AU"
   }
 ]
