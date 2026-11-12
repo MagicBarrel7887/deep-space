@@ -9,28 +9,6 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-26",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "SOHO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "245.8 kbps",
-    "rtlt": "0m"
-  },
-  {
-    "id": "DSS-24",
-    "site": "Goldstone",
-    "diameter": "34m",
-    "target": "LUCY",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "20.0 kbps",
-    "rtlt": "1h 43m"
-  },
-  {
     "id": "DSS-23",
     "site": "Unknown",
     "diameter": "?",
@@ -40,14 +18,36 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-25",
+    "id": "DSS-24",
     "site": "Goldstone",
     "diameter": "34m",
-    "target": "IMAP",
+    "target": "KPLO",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "714.3 kbps",
+    "dataRate": "8.2 kbps",
+    "rtlt": "0m"
+  },
+  {
+    "id": "DSS-25",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "SPP",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "294.1 kbps",
+    "rtlt": "16m"
+  },
+  {
+    "id": "DSS-26",
+    "site": "Goldstone",
+    "diameter": "34m",
+    "target": "CAPS",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "256.0 kbps",
     "rtlt": "0m"
   },
   {
@@ -63,71 +63,16 @@
     "id": "DSS-53",
     "site": "Unknown",
     "diameter": "?",
-    "target": "SPP",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": "16m"
-  },
-  {
-    "id": "DSS-56",
-    "site": "Madrid",
-    "diameter": "34m",
-    "target": "RST",
+    "target": "JWST",
     "band": "—",
     "status": "active",
     "signalType": "data",
-    "dataRate": "780.0 kbps",
+    "dataRate": "28.0 Mbps",
     "rtlt": "0m"
   },
   {
-    "id": "DSS-65",
+    "id": "DSS-54",
     "site": "Madrid",
-    "diameter": "34m",
-    "target": "ORX",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": null,
-    "rtlt": "10m"
-  },
-  {
-    "id": "DSS-63",
-    "site": "Madrid",
-    "diameter": "70m",
-    "target": "VGR1",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": "48h 03m"
-  },
-  {
-    "id": "DSS-43",
-    "site": "Canberra",
-    "diameter": "70m",
-    "target": "JNO",
-    "band": "—",
-    "status": "active",
-    "signalType": "data",
-    "dataRate": "152.8 kbps",
-    "rtlt": "1h 28m"
-  },
-  {
-    "id": "DSS-34",
-    "site": "Canberra",
-    "diameter": "34m",
-    "target": "MRO",
-    "band": "—",
-    "status": "active",
-    "signalType": null,
-    "dataRate": null,
-    "rtlt": "22m"
-  },
-  {
-    "id": "DSS-36",
-    "site": "Canberra",
     "diameter": "34m",
     "target": "ESCB",
     "band": "—",
@@ -137,14 +82,54 @@
     "rtlt": "0m"
   },
   {
-    "id": "DSS-35",
-    "site": "Canberra",
+    "id": "DSS-65",
+    "site": "Madrid",
     "diameter": "34m",
-    "target": "PSYC",
+    "target": "M01O",
     "band": "—",
     "status": "active",
     "signalType": null,
     "dataRate": null,
-    "rtlt": "27m"
+    "rtlt": "22m"
+  },
+  {
+    "id": "DSS-34",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "JNO",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "18.1 kbps",
+    "rtlt": "1h 28m"
+  },
+  {
+    "id": "DSS-36",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
+  },
+  {
+    "id": "DSS-35",
+    "site": "Canberra",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
+  },
+  {
+    "id": "DSS-43",
+    "site": "Canberra",
+    "diameter": "70m",
+    "target": "EURC",
+    "band": "—",
+    "status": "active",
+    "signalType": "data",
+    "dataRate": "50.0 kbps",
+    "rtlt": "2m"
   }
 ]
