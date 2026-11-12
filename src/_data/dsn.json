@@ -1,14 +1,5 @@
 [
   {
-    "id": "DSS-14",
-    "site": "Goldstone",
-    "diameter": "70m",
-    "target": "—",
-    "band": "—",
-    "status": "idle",
-    "note": "no active target in feed right now"
-  },
-  {
     "id": "DSS-26",
     "site": "Goldstone",
     "diameter": "34m",
@@ -45,9 +36,9 @@
     "note": "no active target in feed right now"
   },
   {
-    "id": "DSS-55",
-    "site": "Madrid",
-    "diameter": "34m",
+    "id": "DSS-14",
+    "site": "Goldstone",
+    "diameter": "70m",
     "target": "—",
     "band": "—",
     "status": "idle",
@@ -73,6 +64,15 @@
   },
   {
     "id": "DSS-56",
+    "site": "Madrid",
+    "diameter": "34m",
+    "target": "—",
+    "band": "—",
+    "status": "idle",
+    "note": "no active target in feed right now"
+  },
+  {
+    "id": "DSS-55",
     "site": "Madrid",
     "diameter": "34m",
     "target": "—",
