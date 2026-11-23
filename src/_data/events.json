@@ -12,15 +12,15 @@
     "label": "New Horizons KBO candidate observation window"
   },
   {
-    "date": "Nov 22",
-    "label": "Asteroid 2026 WJ close approach, 0.00 AU"
-  },
-  {
-    "date": "Nov 22",
-    "label": "Asteroid 2026 WC1 close approach, 0.02 AU"
+    "date": "Nov 23",
+    "label": "Asteroid 2026 WF close approach, 0.02 AU"
   },
   {
     "date": "Nov 23",
-    "label": "Asteroid 2026 WF close approach, 0.02 AU"
+    "label": "Asteroid 2026 VF18 close approach, 0.03 AU"
+  },
+  {
+    "date": "Nov 23",
+    "label": "Asteroid 2026 WD close approach, 0.01 AU"
   }
 ]
